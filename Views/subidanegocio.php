@@ -10,7 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Íconos de la aplicación -->
     <link rel="apple-touch-icon" href="../public/img/LogoLocalExplore.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/LogoLocalExplore.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../public/img/LogoLocalExplore.png">
     <!-- Hojas de estilo -->
     <link rel="stylesheet" href="../public/css/bootstrap.min.css">
     <link rel="stylesheet" href="../public/css/templatemo.css">
@@ -90,28 +90,15 @@ session_start();
             <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                        <li class="nav-item"><a class="nav-link" href="../Views/admin.php">usuario</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../Views/lacaladmi.php">Locales</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../Views/subidanegocio.php">subir negocio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../Views/contact.php">Contactos</a></li>
-                        <li class="nav-item">
-                            <a href="favoritos.php" class="nav-link" id="heart-link">
-                                <i class="fa fa-heart heart-icon"></i>
-                            </a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../Views/admin.php">Inicio Administrador</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Views/localadmi.php">Locales</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Views/subidanegocio.php">Sube Tu Negocio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Views/contactadmi.php">Contactos</a></li>
+
                     </ul>
                 </div>
             </div>
-            <div class="navbar align-self-center d-flex">
-                <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="inputMobileSearch" placeholder="Buscar ...">
-                        <div class="input-group-text">
-                            <i class="fa fa-fw fa-search"></i>
-                        </div>
-                    </div>
-                </div>           
-            </div>
+           
         </div>
         <div class="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4" id="nav-content">
             <div class="auth flex items-center w-full md:w-full">
@@ -154,7 +141,7 @@ session_start();
                     </div>
                     <div class="form-group col-12">
                         <label for="url" class="form-label">URL</label>
-                        <input type="url" class="form-control" id="url" name="url" oninput="updateUrlPreview()" required>
+                        <input type="url" class="form-control" id="url" name="url"  placeholder="URL (puede ser cualquier texto)" oninput="updateUrlPreview()" required>
                         <div id="urlPreview" class="mt-2"></div>
                     </div>
                     <div class="form-row col-12">
@@ -174,11 +161,10 @@ session_start();
                     </div>
                     <div class="form-group col-12">
                         <label for="nombre_categoria" class="form-label">Categoría</label>
-                        <select class="form-control" id="nombre_categoria" name="nombre_categoria" required>
+                        <select class="form-control" id="nombre_categoria" name="role" required>
                             <option value="">Seleccionar categoría</option>
                             <option value="Restaurante">Restaurante</option>
                             <option value="Tienda">Tienda</option>
-                            <option value="Servicio">Servicio</option>
                         </select>
                     </div>
                     <div class="col-12 text-center">

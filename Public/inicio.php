@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Configuración de vista para dispositivos móviles -->
 
     <link rel="apple-touch-icon" href="../public/img/LogoLocalExplore.png"> <!-- Icono para dispositivos Apple -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/LogoLocalExplore.png"> <!-- Icono de acceso directo -->
+    <link rel="shortcut icon" type="image/x-icon" href="../public/img/LogoLocalExplore.png"> <!-- Icono de acceso directo -->
 
-    <link rel="stylesheet" href="../public/css/bootstrap.min.css"> <!-- Hoja de estilos de Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- Hoja de estilos de Bootstrap -->
     <link rel="stylesheet" href="../public/css/templatemo.css"> <!-- Hoja de estilos personalizada -->
     <link rel="stylesheet" href="../public/css/custom.css"> <!-- Hoja de estilos adicional -->
 
@@ -40,7 +40,7 @@
                 <span class="navbar-toggler-icon"></span> <!-- Icono del botón de colapso -->
             </button>
 
-            <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav"> <!-- Navegación colapsable -->
+            < class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav"> <!-- Navegación colapsable -->
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
                         <li class="nav-item">
@@ -49,37 +49,21 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../Views/localesinicio.php">Locales</a> <!-- Enlace a la página de locales -->
                         </li>
-                      
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Views/contact.php">Contactos</a> <!-- Enlace a la página de contactos -->
+                        </li>
                         <!-- Links para login y registro -->
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/inicio_sesion.php">Login</a> <!-- Enlace a la página de login -->
+                            <a class="nav-link btn btn-primary text-white" href="../Views/inicio_sesion.php">Login</a> <!-- Enlace a la página de login -->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn btn-primary text-white" href="../Views/registro.php">Register</a> <!-- Enlace a la página de registro -->
                         </li>
-                        <!-- Corazón (favoritos) agregado después de "Register" -->
-                        <li class="nav-item">
-                            <a href="favoritos.php" class="nav-link" id="heart-link">
-                                <i class="fa fa-heart heart-icon"></i> <!-- Icono de corazón para favoritos -->
-                            </a>
-                        </li>
+
                     </ul>
                 </div>
-            </div>
-
-            <div class="navbar align-self-center d-flex"> <!-- Sección de búsqueda en la navbar -->
-                <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3"> <!-- Oculta en pantallas grandes -->
-                    <div class="input-group">
-                        <!-- Campo de búsqueda móvil -->
-                        <input type="text" class="form-control" id="inputMobileSearch" placeholder="Buscar ..."> <!-- Campo de entrada para búsqueda -->
-                        <div class="input-group-text">
-                            <i class="fa fa-fw fa-search"></i> <!-- Icono de búsqueda -->
-                        </div>
-                    </div>
-                </div>           
-            </div>
+</div>
         </div>
-   
     </nav>
     <!-- Cerrar Header -->
 
@@ -168,7 +152,88 @@
         </a>
     </div>
 
-   
+<!--Brands-->
+<section class="bg-light py-5"> <!-- Sección que muestra las marcas con fondo claro y espaciado vertical -->
+    <div class="container my-4"> <!-- Contenedor principal con márgenes verticales -->
+        <div class="row text-center py-3"> <!-- Fila para alinear el contenido en el centro y espaciado vertical -->
+            <div class="col-lg-6 m-auto"> <!-- Columna centrada para el título y descripción -->
+                <h1 class="h1">Marcas</h1> <!-- Título de la sección -->
+                <p>
+                    Marcas reconocidas del mercado <!-- Descripción de la sección -->
+                </p>
+            </div>
+            <div class="col-lg-9 m-auto tempaltemo-carousel"> <!-- Columna para el carrusel de marcas -->
+                <div class="row d-flex flex-row"> <!-- Fila flexible para los controles y carrusel -->
+                    <!--Controls-->
+                    <div class="col-1 align-self-center"> <!-- Columna para el control de deslizamiento hacia la izquierda -->
+                        <a class="h1" href="#multi-item-example" role="button" data-bs-slide="prev"> <!-- Enlace para retroceder en el carrusel -->
+                            <i class="text-light fas fa-chevron-left"></i> <!-- Ícono de flecha hacia la izquierda -->
+                        </a>
+                    </div>
+                    <!--End Controls-->
+
+                    <!--Carousel Wrapper-->
+                    <div class="col"> <!-- Columna para el contenedor del carrusel -->
+                        <div class="carousel slide carousel-multi-item pt-2 pt-md-0" id="multi-item-example" data-bs-ride="carousel"> <!-- Carrusel que se desliza automáticamente -->
+                            <!--Slides-->
+                            <div class="carousel-inner product-links-wap" role="listbox"> <!-- Contenedor de las diapositivas -->
+                                <!-- First slide -->
+                                <div class="carousel-item active"> <!-- Primera diapositiva activa -->
+                                    <div class="row"> <!-- Fila para alinear las marcas -->
+                                        <div class="col-3 p-md-5"> <!-- Columna para una marca -->
+                                            <a href="https://www.kfc.co/"><img class="img-fluid brand-img" src="../public/img/marca1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                        </div>
+                                        <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
+                                            <a href="https://www.ea.com/es-es"><img class="img-fluid brand-img" src="../public/img/marca2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                        </div>
+                                        <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
+                                            <a href="https://www.adidas.co/"><img class="img-fluid brand-img" src="../public/img/marca3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                        </div>
+                                        <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
+                                            <a href="https://www.gucci.com/es/es/"><img class="img-fluid brand-img" src="../public/img/marca4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End First slide -->
+
+                                <!-- Second slide -->
+                                <div class="carousel-item"> <!-- Segunda diapositiva -->
+                                    <div class="row"> <!-- Fila para alinear las marcas -->
+                                        <div class="col-3 p-md-5"> <!-- Columna para una marca -->
+                                            <a href="https://www.tesla.com/"><img class="img-fluid brand-img" src="../public/img/logo1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                        </div>
+                                        <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
+                                            <a href="https://www.apple.com/co/"><img class="img-fluid brand-img" src="../public/img/logo2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                        </div>
+                                        <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
+                                            <a href="https://www.microsoft.com/es-co"><img class="img-fluid brand-img" src="../public/img/logo3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                        </div>
+                                        <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
+                                            <a href="https://www.nike.com/es/"><img class="img-fluid brand-img" src="../public/img/logo4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Second slide -->
+                            </div>
+                            <!-- End Slides -->
+                        </div>
+                    </div>
+                    <!--End Carousel Wrapper-->
+
+                    <!--Controls-->
+                    <div class="col-1 align-self-center"> <!-- Columna para el control de deslizamiento hacia la derecha -->
+                        <a class="h1" href="#multi-item-example" role="button" data-bs-slide="next"> <!-- Enlace para avanzar en el carrusel -->
+                            <i class="text-light fas fa-chevron-right"></i> <!-- Ícono de flecha hacia la derecha -->
+                        </a>
+                    </div>
+                    <!--End Controls-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Brands-->
+    
 
 <!-- Start Footer -->
 <footer class="bg-dark text-light py-5" id="footer"> <!-- Sección del pie de página -->

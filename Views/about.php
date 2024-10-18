@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="../public/img/LogoLocalExplore.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/LogoLocalExplore.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../public/img/LogoLocalExplore.png">
 
     <link rel="stylesheet" href="../public/css/bootstrap.min.css">
     <link rel="stylesheet" href="../public/css/templatemo.css">
@@ -42,39 +42,26 @@
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
                     
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/admin.php">usuario</a> <!-- Enlace a la página de usuario -->
+                            <a class="nav-link" href="../Views/admin.php">Inicio Administrador</a> <!-- Enlace a la página de usuario -->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../Views/localadmi.php">Locales</a> <!-- Enlace a la página de locales -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/about.php">planes</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link" href="../Views/about.php">Planes</a> <!-- Enlace a la página de locales -->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../Views/contactadmi.php">Contactos</a> <!-- Enlace a la página de contactos -->
                         </li>
-                     
-                        <!-- Corazón (favoritos) agregado después de "Register" -->
                         <li class="nav-item">
-                            <a href="favoritos.php" class="nav-link" id="heart-link">
-                                <i class="fa fa-heart heart-icon"></i> <!-- Icono de corazón para favoritos -->
-                            </a>
+                            <a class="nav-link" href="../Views/subidanegocio.php">Subir Negocio</a> <!-- Enlace a la página de locales -->
                         </li>
+                     
+                        
                     </ul>
                 </div>
             </div>
 
-            <div class="navbar align-self-center d-flex"> <!-- Sección de búsqueda en la navbar -->
-                <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3"> <!-- Oculta en pantallas grandes -->
-                    <div class="input-group">
-                        <!-- Campo de búsqueda móvil -->
-                        <input type="text" class="form-control" id="inputMobileSearch" placeholder="Buscar ..."> <!-- Campo de entrada para búsqueda -->
-                        <div class="input-group-text">
-                            <i class="fa fa-fw fa-search"></i> <!-- Icono de búsqueda -->
-                        </div>
-                    </div>
-                </div>           
-            </div>
         </div>
          
 <!-- Contenido adicional del menú -->
@@ -246,16 +233,16 @@
                                 <div class="carousel-item active"> <!-- Primera diapositiva activa -->
                                     <div class="row"> <!-- Fila para alinear las marcas -->
                                         <div class="col-3 p-md-5"> <!-- Columna para una marca -->
-                                            <a href="https://www.kfc.co/"><img class="img-fluid brand-img" src="assets/img/marca1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.kfc.co/"><img class="img-fluid brand-img" src="../public/img/marca1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.ea.com/es-es"><img class="img-fluid brand-img" src="assets/img/marca2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.ea.com/es-es"><img class="img-fluid brand-img" src="../public/img/marca2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.adidas.co/"><img class="img-fluid brand-img" src="assets/img/marca3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.adidas.co/"><img class="img-fluid brand-img" src="../public/img/marca3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.gucci.com/es/es/"><img class="img-fluid brand-img" src="assets/img/marca4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.gucci.com/es/es/"><img class="img-fluid brand-img" src="../public/img/marca4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                     </div>
                                 </div>
@@ -265,16 +252,16 @@
                                 <div class="carousel-item"> <!-- Segunda diapositiva -->
                                     <div class="row"> <!-- Fila para alinear las marcas -->
                                         <div class="col-3 p-md-5"> <!-- Columna para una marca -->
-                                            <a href="https://www.tesla.com/"><img class="img-fluid brand-img" src="assets/img/logo1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.tesla.com/"><img class="img-fluid brand-img" src="../public/img/logo1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.apple.com/co/"><img class="img-fluid brand-img" src="assets/img/logo2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.apple.com/co/"><img class="img-fluid brand-img" src="../public/img/logo2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.microsoft.com/es-co"><img class="img-fluid brand-img" src="assets/img/logo3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.microsoft.com/es-co"><img class="img-fluid brand-img" src="../public/img/logo3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.nike.com/es/"><img class="img-fluid brand-img" src="assets/img/logo4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.nike.com/es/"><img class="img-fluid brand-img" src="../public/img/logo4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                     </div>
                                 </div>
@@ -365,7 +352,13 @@
     </div>
 </footer>
 <!-- End Footer -->
-
+<!-- Iniciar Script -->
+<script src="../public/js/jquery-1.11.0.min.js"></script> <!-- Incluir jQuery -->
+<script src="../public/js/jquery-migrate-1.2.1.min.js"></script> <!-- Incluir jQuery Migrate -->
+<script src="../public/js/bootstrap.bundle.min.js"></script> <!-- Incluir Bootstrap -->
+<script src="../public/js/templatemo.js"></script> <!-- Incluir el script principal de Templatemo -->
+<script src="../public/js/custom.js"></script> <!-- Incluir script personalizado -->
+<!-- End Script -->
     <!-- Agrega los scripts de Bootstrap -->
     <script src="../public/js/bootstrap.bundle.min.js"></script>
 </body>

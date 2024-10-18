@@ -1,151 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Login</title> <!-- Título de la página -->
-    <meta charset="utf-8"> <!-- Conjunto de caracteres UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Configuración de vista para dispositivos móviles -->
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="../public/img/LogoLocalExplore.png"> <!-- Icono para dispositivos Apple -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/LogoLocalExplore.png"> <!-- Icono de acceso directo -->
+    <link rel="apple-touch-icon" href="../public/img/LogoLocalExplore.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/LogoLocalExplore.png">
 
-    <link rel="stylesheet" href="../public/css/bootstrap.min.css"> <!-- Hoja de estilos de Bootstrap -->
-    <link rel="stylesheet" href="../public/css/templatemo.css"> <!-- Hoja de estilos personalizada -->
-    <link rel="stylesheet" href="../public/css/custom.css"> 
-    <!-- Cargar estilos de fuente de Google -->
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/templatemo.css">
+    <link rel="stylesheet" href="../public/css/custom.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="../public/css/fontawesome.min.css"> <!-- Hoja de estilos de Font Awesome -->
+    <link rel="stylesheet" href="../public/css/fontawesome.min.css">
 
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Roboto', sans-serif; /* Usar una fuente moderna */
-            background-color: #f0f4f8; /* Color de fondo suave */
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
         }
 
         .form-container {
-            background: rgba(255, 255, 255, 0.95); /* Fondo blanco con un poco de transparencia */
-            border-radius: 15px; /* Esquinas redondeadas */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
-            padding: 40px 30px; /* Espaciado interno */
-            width: 400px; /* Ancho fijo del formulario */
-            margin: 40px auto; /* Margen superior e inferior para separación */
-            text-align: left; /* Alinear texto a la izquierda */
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px; /* Esquinas más redondeadas */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+            padding: 50px 40px; /* Espaciado interno aumentado */
+            width: 450px; /* Ancho aumentado */
+            margin: 40px auto; 
+            text-align: left;
         }
 
         .my-form h1 {
-            margin-bottom: 20px; /* Espacio debajo del título */
-            font-weight: 500; /* Peso de la fuente */
-            color: #333; /* Color del texto */
+            margin-bottom: 25px;
+            font-weight: 600; /* Peso de la fuente más fuerte */
+            color: #333;
+            text-align: center;
+            font-size: 24px; /* Tamaño de fuente del título aumentado */
         }
 
         .form-label {
-            display: block; /* Asegura que el label esté en su propia línea */
-            margin-bottom: 8px; /* Espacio debajo del label */
-            color: #555; /* Color del texto */
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+            font-weight: 500; /* Peso de la fuente del label */
         }
 
         .form-input {
-            width: 100%; /* Ocupa todo el ancho */
-            padding: 10px; /* Espaciado interno */
-            border: 1px solid #ccc; /* Borde suave */
-            border-radius: 8px; /* Esquinas redondeadas */
-            transition: border-color 0.3s; /* Transición suave en el borde */
+            width: 100%;
+            padding: 12px; /* Espaciado interno aumentado */
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            transition: border-color 0.3s;
+            font-size: 16px; /* Tamaño de fuente aumentado */
         }
 
         .form-input:focus {
-            border-color: #007bff; /* Color de borde al enfocar */
-            outline: none; /* Eliminar el borde de enfoque predeterminado */
+            border-color: #007bff;
+            outline: none;
         }
 
         .btn-submit {
-            width: 100%; /* Botón ocupa todo el ancho */
-            padding: 10px; /* Espaciado interno */
-            background-color: #007bff; /* Color de fondo */
-            color: white; /* Color del texto */
-            border: none; /* Sin borde */
-            border-radius: 8px; /* Esquinas redondeadas */
-            font-size: 16px; /* Tamaño de fuente */
-            cursor: pointer; /* Cambiar cursor a puntero */
-            transition: background-color 0.3s; /* Transición suave en el fondo */
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px; /* Tamaño de fuente aumentado */
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         .btn-submit:hover {
-            background-color: #0056b3; /* Color de fondo al pasar el mouse */
+            background-color: #0056b3;
         }
 
         .text-link {
-            color: #007bff; /* Color del enlace */
-            text-decoration: none; /* Sin subrayado */
+            color: #007bff;
+            text-decoration: none;
         }
 
         .text-link:hover {
-            text-decoration: underline; /* Subrayar al pasar el mouse */
+            text-decoration: underline;
         }
 
         .footer-text {
-            text-align: center; /* Centrando el texto del pie */
-            opacity: 0.6; /* Sutil opacidad */
-            color: white; /* Color del texto */
-            margin-top: 20px; /* Margen superior */
+            text-align: center;
+            opacity: 0.6;
+            color: white;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <?php
-        session_start();
-    ?> 
+
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow"> <!-- Barra de navegación -->
-        <div class="container d-flex justify-content-between align-items-center"> <!-- Contenedor flex para alinear elementos -->
-            <a class="navbar-brand text-success logo h1 align-self-center d-flex align-items-center" href="index.php"> <!-- Logo de la marca -->
-                <img src="../public/img/LogoLocalExplore.png" alt="Logo" class="logo-img"> <!-- Imagen del logo -->
-                <span class="ml-2">ExploreLocal</span> <!-- Nombre de la marca -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand text-success logo h1 align-self-center d-flex align-items-center" href="index.php">
+                <img src="../public/img/LogoLocalExplore.png" alt="Logo" class="logo-img">
+                <span class="ml-2">ExploreLocal</span>
             </a>
 
-            <!-- Botón para colapsar la navbar en pantallas pequeñas -->
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span> <!-- Icono del botón de colapso -->
+                <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav"> <!-- Navegación colapsable -->
+            <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
                 <div class="flex-fill">
-                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/inicio.php">Inicio</a> <!-- Enlace a la página de inicio -->
+                            <a class="nav-link" href="../Views/inicio.php">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/localesinicio.php">Locales</a> <!-- Enlace a la página de locales -->
-                        </li>
-                      
-                        <!-- Links para login y registro -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Views/inicio_sesion.php">Login</a> <!-- Enlace a la página de login -->
+                            <a class="nav-link" href="../Views/localesinicio.php">Locales</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary text-white" href="../Views/registro.php">Register</a> <!-- Enlace a la página de registro -->
+                            <a class="nav-link" href="../Views/contact.php">Contactos</a>
                         </li>
-                        <!-- Corazón (favoritos) agregado después de "Register" -->
                         <li class="nav-item">
-                            <a href="favoritos.php" class="nav-link" id="heart-link">
-                                <i class="fa fa-heart heart-icon"></i> <!-- Icono de corazón para favoritos -->
-                            </a>
+                            <a class="nav-link btn btn-primary text-white" href="../Views/inicio_sesion.php">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white" href="../Views/registro.php">Register</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="navbar align-self-center d-flex"> <!-- Sección de búsqueda en la navbar -->
-                <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3"> <!-- Oculta en pantallas grandes -->
-                    <div class="input-group">
-                        <!-- Campo de búsqueda móvil -->
-                        <input type="text" class="form-control" id="inputMobileSearch" placeholder="Buscar ..."> <!-- Campo de entrada para búsqueda -->
-                        <div class="input-group-text">
-                            <i class="fa fa-fw fa-search"></i> <!-- Icono de búsqueda -->
-                        </div>
-                    </div>
-                </div>           
-            </div>
         </div>
     </nav>
     <!-- Cerrar Header -->
@@ -186,7 +170,6 @@
             var email = document.getElementById("email").value;
             var password = document.getElementById("password").value;
     
-            // Validación adicional
             if (email === "" || password === "") {
                 alert("Por favor completa todos los campos.");
                 return false;
@@ -196,6 +179,62 @@
         }
     </script>
 
-    <script src="../Public/js/validacioninicio.js"></script> 
+    <!-- Start Footer -->
+    <footer class="bg-dark text-light py-5" id="footer">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">ExploreLocal</h2>
+                    <ul class="list-unstyled mt-4">
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="fas fa-map-marker-alt me-2 fs-5"></i>
+                            <span>Villeta</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="fa fa-phone me-2 fs-5"></i>
+                            <a class="text-light text-decoration-none" href="tel:3135657271">313 565 7271</a>
+                        </li>
+                        <li class="d-flex align-items-center">
+                            <i class="fa fa-envelope me-2 fs-5"></i>
+                            <a class="text-light text-decoration-none" href="mailto:Infinity@company.com">Infinity@company.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-8">
+                    <div class="d-flex flex-wrap justify-content-center justify-md-end mb-3">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item mx-2">
+                                <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/">
+                                    <i class="fab fa-facebook-f fa-2x"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a class="text-light text-decoration-none" target="_blank" href="http://twitter.com/">
+                                    <i class="fab fa-twitter fa-2x"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a class="text-light text-decoration-none" target="_blank" href="http://instagram.com/">
+                                    <i class="fab fa-instagram fa-2x"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row border-top pt-3">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2024 ExploreLocal. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a class="text-light text-decoration-none me-3" href="../Views/terminos.html">Términos del servicio</a>
+                    <a class="text-light text-decoration-none" href="../Views/politica_privacidad.html">Política de privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <script src="../public/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

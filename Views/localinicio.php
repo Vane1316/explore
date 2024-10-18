@@ -46,62 +46,6 @@ if ($id_local) {
     <link rel="stylesheet" type="text/css" href="../public/css/slick.min.css">
     <link rel="stylesheet" type="text/css" href="../public/css/slick-theme.css">
 
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f2f5; /* Color de fondo suave */
-        }
-        .main-content {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .image-container,
-        .info-container {
-            flex: 1 1 100%; /* Ocupa el 100% en pantallas pequeñas */
-            padding: 10px;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px; /* Espacio entre los contenedores en pantallas pequeñas */
-        }
-        @media (min-width: 768px) {
-            .image-container,
-            .info-container {
-                flex: 1 1 48%; /* Ocupa el 48% del ancho en pantallas grandes */
-            }
-            .image-container {
-                margin-right: 20px; /* Espacio entre imagen e información */
-                margin-bottom: 0; /* Elimina el margen inferior */
-            }
-        }
-        .image-container img {
-            width: 100%; /* La imagen ocupa todo el ancho del contenedor */
-            border-radius: 10px 10px 0 0; /* Bordes redondeados solo en la parte superior */
-            object-fit: cover; /* Mantiene la proporción de la imagen */
-            height: 300px; /* Altura fija para las imágenes */
-        }
-        .info-container h2 {
-            color: #28a745; /* Color del título */
-            font-size: 1.8em; /* Tamaño de fuente más grande */
-        }
-        .info-container p {
-            margin: 10px 0;
-            font-size: 1.1em; /* Tamaño de fuente para los datos */
-            color: #333; /* Color del texto */
-        }
-        .info-container strong {
-            color: #28a745; /* Color para las etiquetas en negrita */
-        }
-        footer {
-            background-color: #343a40;
-            color: white;
-            padding: 20px 0;
-        }
-        footer .text-light a {
-            color: #adb5bd;
-        }
-    </style>
 </head>
 
 <body>
@@ -124,23 +68,21 @@ if ($id_local) {
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
                     
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/admin.php">usuario</a> <!-- Enlace a la página de usuario -->
+                            <a class="nav-link" href="../Views/inicio.php">Inicio</a> <!-- Enlace a la página de usuario -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/localadmi.php">Locales</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link" href="../Views/localesinicio.php">Locales</a> <!-- Enlace a la página de locales -->
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Views/contact.php">Contactos</a> <!-- Enlace a la página de contactos -->
+                        </li>
+                        <!-- Links para login y registro -->
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white" href="../Views/inicio_sesion.php">Login</a> <!-- Enlace a la página de login -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/about.php">planes</a> <!-- Enlace a la página de locales -->
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Views/contactadmi.php">Contactos</a> <!-- Enlace a la página de contactos -->
-                        </li>
-                     
-                        <!-- Corazón (favoritos) agregado después de "Register" -->
-                        <li class="nav-item">
-                            <a href="favoritos.php" class="nav-link" id="heart-link">
-                                <i class="fa fa-heart heart-icon"></i> <!-- Icono de corazón para favoritos -->
-                            </a>
+                            <a class="nav-link btn btn-primary text-white" href="../Views/registro.php">Register</a> <!-- Enlace a la página de registro -->
                         </li>
                     </ul>
                 </div>
@@ -162,7 +104,7 @@ if ($id_local) {
 <!-- Contenido adicional del menú -->
 <div class="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4" id="nav-content">
     <div class="auth flex items-center w-full md:w-full">
-            <a class="inline-block no-underline font-medium text-black text-lg hover:text-[#6F00FF] px-4" href="../public/logout_action.php">Cerrar sesión</a>
+            
     </nav>
     
 
@@ -186,42 +128,223 @@ if ($id_local) {
     </div>
 <!-- Cerrar Header -->
 
-    <div class="container py-5">
-        <h1 class="text-center mb-4">Detalles del Local</h1>
-        <?php if ($localDetails): ?>
-            <h2 class="text-center"><?php echo htmlspecialchars($localDetails['nombre_empresa']); ?></h2>
-            <div class="main-content">
-                <div class="image-container">
-                    <?php if ($imagenes): ?>
-                        <div class="slick-slider">
-                            <?php foreach ($imagenes as $imagen): ?>
-                                <div>
-                                    <img src="<?php echo htmlspecialchars($imagen['img']); ?>" alt="Imagen del Local" style="height: 200px; object-fit: cover;">
+<!-- Cerrar Header -->
+
+<div class="container py-5">
+    <?php if ($localDetails): ?>
+        <h2 class="text-center text-success display-4 mb-4"><?php echo htmlspecialchars($localDetails['nombre_empresa']); ?></h2>
+        <div class="main-content">
+            <div class="image-container">
+                <?php if ($imagenes): ?>
+                    <img id="main-image" src="<?php echo htmlspecialchars($imagenes[0]['img']); ?>" alt="Imagen del Local" class="img-fluid">
+                    <div class="arrow-container">
+                        <button class="arrow" onclick="changeImage(-1)">&#10094;</button>
+                        <button class="arrow" onclick="changeImage(1)">&#10095;</button>
+                    </div>
+                <?php else: ?>
+                    <p class="text-muted">No hay imágenes disponibles para este local.</p>
+                <?php endif; ?>
+            </div>
+            <div class="info-container">
+                <p><strong>NIT:</strong> <?php echo htmlspecialchars($localDetails['nit']); ?></p>
+                <p><strong>Dirección:</strong> <?php echo htmlspecialchars($localDetails['direccion']); ?></p>
+                <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($localDetails['telefono']); ?></p>
+                <p><strong>Descripción:</strong> <?php echo htmlspecialchars($localDetails['descripcion']); ?></p>
+                <p><strong>Servicios:</strong> <?php echo htmlspecialchars($localDetails['servicios']); ?></p>
+                <p><strong>URL:</strong> <a href="<?php echo htmlspecialchars($localDetails['url']); ?>" target="_blank" class="text-primary"><?php echo htmlspecialchars($localDetails['url']); ?></a></p>
+                <p><strong>Horario de Apertura:</strong> <?php echo htmlspecialchars($localDetails['horario_apertura']); ?></p>
+                <p><strong>Horario de Cierre:</strong> <?php echo htmlspecialchars($localDetails['horario_cierre']); ?></p>
+            </div>
+        </div>
+    <?php else: ?>
+        <p class="text-danger">No se encontraron detalles para este local.</p>
+    <?php endif; ?>
+</div>
+
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0f2f5; /* Color de fondo suave */
+        margin: 0;
+        padding: 0;
+    }
+    .main-content {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+    .image-container,
+    .info-container {
+        flex: 1 1 100%; /* Ocupa el 100% en pantallas pequeñas */
+        padding: 10px;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px; /* Espacio entre los contenedores en pantallas pequeñas */
+        transition: box-shadow 0.3s ease; /* Efecto de transición al pasar el ratón */
+    }
+    .image-container:hover,
+    .info-container:hover {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Aumenta la sombra al pasar el ratón */
+    }
+    @media (min-width: 768px) {
+        .image-container,
+        .info-container {
+            flex: 1 1 48%; /* Ocupa el 48% del ancho en pantallas grandes */
+        }
+        .image-container {
+            margin-right: 20px; /* Espacio entre imagen e información */
+            margin-bottom: 0; /* Elimina el margen inferior */
+        }
+    }
+    .image-container img {
+        width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+        border-radius: 10px; /* Bordes redondeados */
+        object-fit: cover; /* Mantiene la proporción de la imagen */
+        height: 300px; /* Altura fija para las imágenes */
+    }
+    .arrow-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px; /* Espacio entre la imagen y las flechas */
+    }
+    .arrow {
+        background-color: #28a745; /* Color del fondo de las flechas */
+        color: white; /* Color del texto */
+        border: none; /* Sin borde */
+        border-radius: 5px; /* Bordes redondeados */
+        padding: 10px; /* Espaciado interno */
+        cursor: pointer; /* Cambia el cursor al pasar el ratón */
+        margin: 0 10px; /* Espaciado entre las flechas */
+        font-size: 20px; /* Tamaño de la flecha */
+        transition: background-color 0.3s ease; /* Efecto de transición */
+    }
+    .arrow:hover {
+        background-color: #218838; /* Color al pasar el ratón */
+    }
+    .info-container h2 {
+        color: #28a745; /* Color del título */
+        font-size: 1.8em; /* Tamaño de fuente más grande */
+    }
+    .info-container p {
+        margin: 10px 0;
+        font-size: 1.1em; /* Tamaño de fuente para los datos */
+        color: #333; /* Color del texto */
+    }
+    .info-container strong {
+        color: #28a745; /* Color para las etiquetas en negrita */
+    }
+    footer {
+        background-color: #343a40;
+        color: white;
+        padding: 20px 0;
+    }
+    footer .text-light a {
+        color: #adb5bd;
+    }
+</style>
+
+<script>
+    let currentIndex = 0; // Índice de la imagen actual
+    const images = <?php echo json_encode(array_column($imagenes, 'img')); ?>; // Obtener todas las imágenes
+
+    function changeImage(direction) {
+        currentIndex += direction;
+
+        // Si el índice se sale de los límites, reiniciar
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1; // Regresar a la última imagen
+        } else if (currentIndex >= images.length) {
+            currentIndex = 0; // Volver a la primera imagen
+        }
+
+        // Cambiar la fuente de la imagen principal
+        document.getElementById('main-image').src = images[currentIndex];
+    }
+</script>
+<!--Brands-->
+<section class="bg-light py-5"> <!-- Sección que muestra las marcas con fondo claro y espaciado vertical -->
+    <div class="container my-4"> <!-- Contenedor principal con márgenes verticales -->
+        <div class="row text-center py-3"> <!-- Fila para alinear el contenido en el centro y espaciado vertical -->
+            <div class="col-lg-6 m-auto"> <!-- Columna centrada para el título y descripción -->
+                <h1 class="h1">Marcas</h1> <!-- Título de la sección -->
+                <p>
+                    Marcas reconocidas del mercado <!-- Descripción de la sección -->
+                </p>
+            </div>
+            <div class="col-lg-9 m-auto tempaltemo-carousel"> <!-- Columna para el carrusel de marcas -->
+                <div class="row d-flex flex-row"> <!-- Fila flexible para los controles y carrusel -->
+                    <!--Controls-->
+                    <div class="col-1 align-self-center"> <!-- Columna para el control de deslizamiento hacia la izquierda -->
+                        <a class="h1" href="#multi-item-example" role="button" data-bs-slide="prev"> <!-- Enlace para retroceder en el carrusel -->
+                            <i class="text-light fas fa-chevron-left"></i> <!-- Ícono de flecha hacia la izquierda -->
+                        </a>
+                    </div>
+                    <!--End Controls-->
+
+                    <!--Carousel Wrapper-->
+                    <div class="col"> <!-- Columna para el contenedor del carrusel -->
+                        <div class="carousel slide carousel-multi-item pt-2 pt-md-0" id="multi-item-example" data-bs-ride="carousel"> <!-- Carrusel que se desliza automáticamente -->
+                            <!--Slides-->
+                            <div class="carousel-inner product-links-wap" role="listbox"> <!-- Contenedor de las diapositivas -->
+                                <!-- First slide -->
+                                <div class="carousel-item active"> <!-- Primera diapositiva activa -->
+                                    <div class="row"> <!-- Fila para alinear las marcas -->
+                                        <div class="col-3 p-md-5"> <!-- Columna para una marca -->
+                                            <a href="https://www.kfc.co/"><img class="img-fluid brand-img" src="../public/img/marca1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                        </div>
+                                        <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
+                                            <a href="https://www.ea.com/es-es"><img class="img-fluid brand-img" src="../public/img/marca2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                        </div>
+                                        <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
+                                            <a href="https://www.adidas.co/"><img class="img-fluid brand-img" src="../public/img/marca3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                        </div>
+                                        <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
+                                            <a href="https://www.gucci.com/es/es/"><img class="img-fluid brand-img" src="../public/img/marca4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                        </div>
+                                    </div>
                                 </div>
-                            <?php endforeach; ?>
+                                <!-- End First slide -->
+
+                                <!-- Second slide -->
+                                <div class="carousel-item"> <!-- Segunda diapositiva -->
+                                    <div class="row"> <!-- Fila para alinear las marcas -->
+                                        <div class="col-3 p-md-5"> <!-- Columna para una marca -->
+                                            <a href="https://www.tesla.com/"><img class="img-fluid brand-img" src="../public/img/logo1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                        </div>
+                                        <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
+                                            <a href="https://www.apple.com/co/"><img class="img-fluid brand-img" src="../public/img/logo2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                        </div>
+                                        <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
+                                            <a href="https://www.microsoft.com/es-co"><img class="img-fluid brand-img" src="../public/img/logo3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                        </div>
+                                        <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
+                                            <a href="https://www.nike.com/es/"><img class="img-fluid brand-img" src="../public/img/logo4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Second slide -->
+                            </div>
+                            <!-- End Slides -->
                         </div>
-                    <?php else: ?>
-                        <p>No hay imágenes disponibles para este local.</p>
-                    <?php endif; ?>
-                </div>
-                <div class="info-container">
-                    <p><strong>NIT:</strong> <?php echo htmlspecialchars($localDetails['nit']); ?></p>
-                    <p><strong>Dirección:</strong> <?php echo htmlspecialchars($localDetails['direccion']); ?></p>
-                    <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($localDetails['telefono']); ?></p>
-                    <p><strong>Descripción:</strong> <?php echo htmlspecialchars($localDetails['descripcion']); ?></p>
-                    <p><strong>Servicios:</strong> <?php echo htmlspecialchars($localDetails['servicios']); ?></p>
-                    <p><strong>URL:</strong> <a href="<?php echo htmlspecialchars($localDetails['url']); ?>" target="_blank"><?php echo htmlspecialchars($localDetails['url']); ?></a></p>
-                    <p><strong>Horario de Apertura:</strong> <?php echo htmlspecialchars($localDetails['horario_apertura']); ?></p>
-                    <p><strong>Horario de Cierre:</strong> <?php echo htmlspecialchars($localDetails['horario_cierre']); ?></p>
+                    </div>
+                    <!--End Carousel Wrapper-->
+
+                    <!--Controls-->
+                    <div class="col-1 align-self-center"> <!-- Columna para el control de deslizamiento hacia la derecha -->
+                        <a class="h1" href="#multi-item-example" role="button" data-bs-slide="next"> <!-- Enlace para avanzar en el carrusel -->
+                            <i class="text-light fas fa-chevron-right"></i> <!-- Ícono de flecha hacia la derecha -->
+                        </a>
+                    </div>
+                    <!--End Controls-->
                 </div>
             </div>
-        <?php else: ?>
-            <p>No se encontraron detalles para este local.</p>
-        <?php endif; ?>
+        </div>
     </div>
-
-    <!-- Start Footer -->
-  
+</section>
+<!--End Brands-->
+    
+    
 <!-- Start Footer -->
 <footer class="bg-dark text-light py-5" id="footer"> <!-- Sección del pie de página -->
     <div class="container"> <!-- Contenedor del pie de página -->

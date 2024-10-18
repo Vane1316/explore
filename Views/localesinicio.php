@@ -36,8 +36,8 @@ $locales = $controller->getLocalesWithDetails();
       session_start();
     ?>
   
-  <!-- Header -->
-  <nav class="navbar navbar-expand-lg navbar-light shadow"> <!-- Barra de navegación -->
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow"> <!-- Barra de navegación -->
         <div class="container d-flex justify-content-between align-items-center"> <!-- Contenedor flex para alinear elementos -->
             <a class="navbar-brand text-success logo h1 align-self-center d-flex align-items-center" href="index.php"> <!-- Logo de la marca -->
                 <img src="../public/img/LogoLocalExplore.png" alt="Logo" class="logo-img"> <!-- Imagen del logo -->
@@ -52,70 +52,32 @@ $locales = $controller->getLocalesWithDetails();
             <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav"> <!-- Navegación colapsable -->
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
-                    
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/admin.php">usuario</a> <!-- Enlace a la página de usuario -->
+                            <a class="nav-link" href="../Views/inicio.php">Inicio</a> <!-- Enlace a la página de inicio -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/localadmi.php">Locales</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link" href="../Views/localesinicio.php">Locales</a> <!-- Enlace a la página de locales -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/about.php">planes</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link" href="../Views/contact.php">Contactos</a> <!-- Enlace a la página de contactos -->
+                        </li>
+                        <!-- Links para login y registro -->
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white" href="../Views/inicio_sesion.php">Login</a> <!-- Enlace a la página de login -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/contactadmi.php">Contactos</a> <!-- Enlace a la página de contactos -->
+                            <a class="nav-link btn btn-primary text-white" href="../Views/registro.php">Register</a> <!-- Enlace a la página de registro -->
                         </li>
-                     
-                        <!-- Corazón (favoritos) agregado después de "Register" -->
-                        <li class="nav-item">
-                            <a href="favoritos.php" class="nav-link" id="heart-link">
-                                <i class="fa fa-heart heart-icon"></i> <!-- Icono de corazón para favoritos -->
-                            </a>
-                        </li>
+
                     </ul>
                 </div>
             </div>
 
-            <div class="navbar align-self-center d-flex"> <!-- Sección de búsqueda en la navbar -->
-                <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3"> <!-- Oculta en pantallas grandes -->
-                    <div class="input-group">
-                        <!-- Campo de búsqueda móvil -->
-                        <input type="text" class="form-control" id="inputMobileSearch" placeholder="Buscar ..."> <!-- Campo de entrada para búsqueda -->
-                        <div class="input-group-text">
-                            <i class="fa fa-fw fa-search"></i> <!-- Icono de búsqueda -->
-                        </div>
-                    </div>
-                </div>           
-            </div>
         </div>
-         
-<!-- Contenido adicional del menú -->
-<div class="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4" id="nav-content">
-    <div class="auth flex items-center w-full md:w-full">
-            <a class="inline-block no-underline font-medium text-black text-lg hover:text-[#6F00FF] px-4" href="../public/logout_action.php">Cerrar sesión</a>
     </nav>
-    
+    <!-- Cerrar Header -->
 
-    <!-- Modal de Búsqueda -->
-    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> <!-- Modal para búsqueda -->
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="w-100 pt-1 mb-5 text-right">
-                <!-- Botón para cerrar el modal -->
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <form action="" method="get" class="modal-content modal-body border-0 p-0"> <!-- Formulario dentro del modal -->
-                <div class="input-group mb-2">
-                    <!-- Campo de búsqueda en el modal -->
-                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Buscar ..."> <!-- Campo de entrada para búsqueda -->
-                    <button type="submit" class="input-group-text bg-success text-light"> <!-- Botón de envío -->
-                        <i class="fa fa-fw fa-search text-white"></i> <!-- Icono de búsqueda -->
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-<!-- Cerrar Header -->
-
+   
 
     <!-- Contenido -->
     <div class="container py-5">
@@ -144,9 +106,8 @@ $locales = $controller->getLocalesWithDetails();
     </div>
 </div>
 <!-- Fin de contenido -->
-
 <!--Brands-->
-    <section class="bg-light py-5"> <!-- Sección que muestra las marcas con fondo claro y espaciado vertical -->
+<section class="bg-light py-5"> <!-- Sección que muestra las marcas con fondo claro y espaciado vertical -->
     <div class="container my-4"> <!-- Contenedor principal con márgenes verticales -->
         <div class="row text-center py-3"> <!-- Fila para alinear el contenido en el centro y espaciado vertical -->
             <div class="col-lg-6 m-auto"> <!-- Columna centrada para el título y descripción -->
@@ -174,16 +135,16 @@ $locales = $controller->getLocalesWithDetails();
                                 <div class="carousel-item active"> <!-- Primera diapositiva activa -->
                                     <div class="row"> <!-- Fila para alinear las marcas -->
                                         <div class="col-3 p-md-5"> <!-- Columna para una marca -->
-                                            <a href="https://www.kfc.co/"><img class="img-fluid brand-img" src="assets/img/marca1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.kfc.co/"><img class="img-fluid brand-img" src="../public/img/marca1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.ea.com/es-es"><img class="img-fluid brand-img" src="assets/img/marca2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.ea.com/es-es"><img class="img-fluid brand-img" src="../public/img/marca2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.adidas.co/"><img class="img-fluid brand-img" src="assets/img/marca3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.adidas.co/"><img class="img-fluid brand-img" src="../public/img/marca3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.gucci.com/es/es/"><img class="img-fluid brand-img" src="assets/img/marca4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.gucci.com/es/es/"><img class="img-fluid brand-img" src="../public/img/marca4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                     </div>
                                 </div>
@@ -193,16 +154,16 @@ $locales = $controller->getLocalesWithDetails();
                                 <div class="carousel-item"> <!-- Segunda diapositiva -->
                                     <div class="row"> <!-- Fila para alinear las marcas -->
                                         <div class="col-3 p-md-5"> <!-- Columna para una marca -->
-                                            <a href="https://www.tesla.com/"><img class="img-fluid brand-img" src="assets/img/logo1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.tesla.com/"><img class="img-fluid brand-img" src="../public/img/logo1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.apple.com/co/"><img class="img-fluid brand-img" src="assets/img/logo2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.apple.com/co/"><img class="img-fluid brand-img" src="../public/img/logo2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.microsoft.com/es-co"><img class="img-fluid brand-img" src="assets/img/logo3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.microsoft.com/es-co"><img class="img-fluid brand-img" src="../public/img/logo3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.nike.com/es/"><img class="img-fluid brand-img" src="assets/img/logo4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.nike.com/es/"><img class="img-fluid brand-img" src="../public/img/logo4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                     </div>
                                 </div>
@@ -226,6 +187,7 @@ $locales = $controller->getLocalesWithDetails();
     </div>
 </section>
 <!--End Brands-->
+    
     
 <!-- Start Footer -->
 <footer class="bg-dark text-light py-5" id="footer"> <!-- Sección de pie de página con fondo oscuro y texto claro -->
@@ -293,8 +255,9 @@ $locales = $controller->getLocalesWithDetails();
     </div>
 </footer>
 <!-- End Footer -->
+    <!-- Scripts -->
+    <script src="../public/js/jquery.min.js"></script> <!-- Script de jQuery -->
+    <script src="../public/js/bootstrap.bundle.min.js"></script> <!-- Script de Bootstrap -->
 
-    <!-- Agrega los scripts de Bootstrap -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

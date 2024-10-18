@@ -67,18 +67,6 @@
                 </div>
             </div>
 
-            <div class="navbar align-self-center d-flex"> <!-- Sección de búsqueda en la navbar -->
-                <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3"> <!-- Oculta en pantallas grandes -->
-                    <div class="input-group">
-                        <!-- Campo de búsqueda móvil -->
-                        <input type="text" class="form-control" id="inputMobileSearch" placeholder="Buscar ..."> <!-- Campo de entrada para búsqueda -->
-                        <div class="input-group-text">
-                            <i class="fa fa-fw fa-search"></i> <!-- Icono de búsqueda -->
-                        </div>
-                    </div>
-                </div>           
-            </div>
-        </div>
          
 <!-- Contenido adicional del menú -->
 <div class="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4" id="nav-content">

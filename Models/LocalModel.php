@@ -97,6 +97,25 @@ class LocalModel {
         }
     }
 
+    // Método para obtener un local por nombre y NIT
+    public function getLocalByNameAndNit($nombre_empresa, $nit) {
+        try {
+            $sql = "SELECT * FROM locales WHERE nombre_empresa = :nombre_empresa OR nit = :nit";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':nombre_empresa', $nombre_empresa);
+            $stmt->bindParam(':nit', $nit);
+
+            if ($stmt->execute()) {
+                return $stmt->fetch(PDO::FETCH_ASSOC); // Retorna los detalles del local si existe
+            } else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
+
     // Método para obtener los detalles de un local específico por ID
     public function getLocalById($id_local) {
         try {
@@ -120,16 +139,12 @@ class LocalModel {
         try {
             $sql = "SELECT img FROM imagenes WHERE local_id = :local_id";
             $stmt = $this->db->prepare($sql);
-            $stmt->bindParam(':local_id', $id_local, PDO::PARAM_INT);
-
-            if ($stmt->execute()) {
-                return $stmt->fetchAll(PDO::FETCH_ASSOC); // Retornar todas las imágenes
-            } else {
-                return []; // Retornar un arreglo vacío si hay un error
-            }
+            $stmt->bindParam(':local_id', $id_local);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
-            return false;
+            return [];
         }
     }
 }

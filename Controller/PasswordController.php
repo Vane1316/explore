@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__.'/../Models/UserModel.php';
+include_once '../Models/UserModel.php';
 
 class PasswordController {
     private $userModel;
@@ -9,9 +9,11 @@ class PasswordController {
     }
 
     public function sendPasswordReset($email) {
+        // Obtén el usuario por email
         $user = $this->userModel->getUserByEmail($email);
 
-        if ($user) {
+        // Verificamos si el usuario existe antes de intentar acceder al id
+        if ($user && isset($user['id'])) {
             $token = bin2hex(random_bytes(50)); // Genera un token único
             $this->userModel->savePasswordResetToken($user['id'], $token);
 
@@ -23,21 +25,23 @@ class PasswordController {
             mail($email, $subject, $message, $headers);
             echo "Se ha enviado un enlace de recuperación a su correo electrónico.";
         } else {
-            echo "No se encontró una cuenta con ese correo electrónico.";
+            // Si el usuario no existe, muestra un mensaje de error
+            echo "<script>alert('No se encontró una cuenta con ese correo electrónico.');</script>";
         }
     }
 
     public function resetPassword($token, $newPassword) {
+        // Obtén el id del usuario a partir del token
         $userId = $this->userModel->getUserIdByToken($token);
 
+        // Si encontramos un usuario con ese token
         if ($userId) {
             $hashedPassword = password_hash($newPassword, PASSWORD_BCRYPT);
             $this->userModel->updatePassword($userId, $hashedPassword);
             $this->userModel->deletePasswordResetToken($userId);
             echo "Su contraseña ha sido actualizada exitosamente.";
         } else {
-            echo "El enlace de restablecimiento de contraseña no es válido o ha expirado.";
+            echo "<script>alert('El enlace de restablecimiento de contraseña no es válido o ha expirado.');</script>";
         }
     }
 }
-

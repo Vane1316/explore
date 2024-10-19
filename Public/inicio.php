@@ -7,16 +7,16 @@
     <meta charset="utf-8"> <!-- Conjunto de caracteres UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Configuración de vista para dispositivos móviles -->
 
-    <link rel="apple-touch-icon" href="../public/img/LogoLocalExplore.png"> <!-- Icono para dispositivos Apple -->
-    <link rel="shortcut icon" type="image/x-icon" href="../public/img/LogoLocalExplore.png"> <!-- Icono de acceso directo -->
+    <link rel="apple-touch-icon" href="img/LogoLocalExplore.png"> <!-- Icono para dispositivos Apple -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/LogoLocalExplore.png"> <!-- Icono de acceso directo -->
 
     <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- Hoja de estilos de Bootstrap -->
-    <link rel="stylesheet" href="../public/css/templatemo.css"> <!-- Hoja de estilos personalizada -->
-    <link rel="stylesheet" href="../public/css/custom.css"> <!-- Hoja de estilos adicional -->
+    <link rel="stylesheet" href="css/templatemo.css"> <!-- Hoja de estilos personalizada -->
+    <link rel="stylesheet" href="css/custom.css"> <!-- Hoja de estilos adicional -->
 
     <!-- Cargar estilos de fuente de Google -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="../public/css/fontawesome.min.css"> <!-- Hoja de estilos de Font Awesome -->
+    <link rel="stylesheet" href="css/fontawesome.min.css"> <!-- Hoja de estilos de Font Awesome -->
 </head>
 
 
@@ -31,7 +31,7 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow"> <!-- Barra de navegación -->
         <div class="container d-flex justify-content-between align-items-center"> <!-- Contenedor flex para alinear elementos -->
             <a class="navbar-brand text-success logo h1 align-self-center d-flex align-items-center" href="index.php"> <!-- Logo de la marca -->
-                <img src="../public/img/LogoLocalExplore.png" alt="Logo" class="logo-img"> <!-- Imagen del logo -->
+                <img src="img/LogoLocalExplore.png" alt="Logo" class="logo-img"> <!-- Imagen del logo -->
                 <span class="ml-2">ExploreLocal</span> <!-- Nombre de la marca -->
             </a>
 
@@ -40,11 +40,11 @@
                 <span class="navbar-toggler-icon"></span> <!-- Icono del botón de colapso -->
             </button>
 
-            < class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav"> <!-- Navegación colapsable -->
+            <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav"> <!-- Navegación colapsable -->
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/inicio.php">Inicio</a> <!-- Enlace a la página de inicio -->
+                            <a class="nav-link" href="/inicio.php">Inicio</a> <!-- Enlace a la página de inicio -->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../Views/localesinicio.php">Locales</a> <!-- Enlace a la página de locales -->
@@ -62,28 +62,10 @@
 
                     </ul>
                 </div>
-</div>
+            </di>
         </div>
     </nav>
     <!-- Cerrar Header -->
-
-    <!-- Modal de Búsqueda -->
-    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> <!-- Modal para búsqueda -->
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="w-100 pt-1 mb-5 text-right">
-                <!-- Botón para cerrar el modal -->
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <form action="" method="get" class="modal-content modal-body border-0 p-0"> <!-- Formulario dentro del modal -->
-                <div class="input-group mb-2">
-                    <!-- Campo de búsqueda en el modal -->
-                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Buscar ..."> <!-- Campo de entrada para búsqueda -->
-                    <button type="submit" class="input-group-text bg-success text-light"> <!-- Botón de envío -->
-                        <i class="fa fa-fw fa-search text-white"></i> <!-- Icono de búsqueda -->
-                    </button>
-                </div>
-            </form>
-        </div>
     </div>
 
     <!-- Iniciar Banner Principal -->
@@ -181,16 +163,16 @@
                                 <div class="carousel-item active"> <!-- Primera diapositiva activa -->
                                     <div class="row"> <!-- Fila para alinear las marcas -->
                                         <div class="col-3 p-md-5"> <!-- Columna para una marca -->
-                                            <a href="https://www.kfc.co/"><img class="img-fluid brand-img" src="../public/img/marca1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.kfc.co/"><img class="img-fluid brand-img" src="img/marca1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.ea.com/es-es"><img class="img-fluid brand-img" src="../public/img/marca2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.ea.com/es-es"><img class="img-fluid brand-img" src="img/marca2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.adidas.co/"><img class="img-fluid brand-img" src="../public/img/marca3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.adidas.co/"><img class="img-fluid brand-img" src="img/marca3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.gucci.com/es/es/"><img class="img-fluid brand-img" src="../public/img/marca4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.gucci.com/es/es/"><img class="img-fluid brand-img" src="img/marca4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                     </div>
                                 </div>
@@ -332,11 +314,11 @@
 <!-- End Footer -->
 
 <!-- Iniciar Script -->
-<script src="../public/js/jquery-1.11.0.min.js"></script> <!-- Incluir jQuery -->
-<script src="../public/js/jquery-migrate-1.2.1.min.js"></script> <!-- Incluir jQuery Migrate -->
-<script src="../public/js/bootstrap.bundle.min.js"></script> <!-- Incluir Bootstrap -->
-<script src="../public/js/templatemo.js"></script> <!-- Incluir el script principal de Templatemo -->
-<script src="../public/js/custom.js"></script> <!-- Incluir script personalizado -->
+<script src="js/jquery-1.11.0.min.js"></script> <!-- Incluir jQuery -->
+<script src="js/jquery-migrate-1.2.1.min.js"></script> <!-- Incluir jQuery Migrate -->
+<script src="js/bootstrap.bundle.min.js"></script> <!-- Incluir Bootstrap -->
+<script src="js/templatemo.js"></script> <!-- Incluir el script principal de Templatemo -->
+<script src="js/custom.js"></script> <!-- Incluir script personalizado -->
 <!-- End Script -->
 </body>
 

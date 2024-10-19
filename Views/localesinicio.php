@@ -53,7 +53,7 @@ $locales = $controller->getLocalesWithDetails();
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/inicio.php">Inicio</a> <!-- Enlace a la página de inicio -->
+                            <a class="nav-link" href="../public/Views/inicio.php">Inicio</a> <!-- Enlace a la página de inicio -->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../Views/localesinicio.php">Locales</a> <!-- Enlace a la página de locales -->

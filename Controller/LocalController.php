@@ -10,20 +10,10 @@ class LocalController {
     }
 
     // Método para registrar un nuevo local
-    public function registerLocal($nombre_empresa, $nit, $direccion, $telefono, $descripcion, $servicios, $url, $nombre_categoria, $img, $horario_apertura, $horario_cierre) {
-        // Verificar si la empresa ya está registrada
-        $localExistente = $this->localModel->getLocalByNameAndNit($nombre_empresa, $nit);
-        
-        if ($localExistente) {
-            // Mostrar alerta si la empresa ya está registrada
-            echo "<script>alert('Empresa registrada');</script>";
-            $url = "mapa"; // Cambiar el URL a "mapa"
-        }
-
-        // Eliminamos la validación específica de la URL
+    public function registerLocal($nombre_empresa, $nit, $direccion, $telefono, $descripcion, $servicios, $mapa, $nombre_categoria, $img, $horario_apertura, $horario_cierre) {
         if ($nombre_empresa && $nit && $direccion && $telefono && $descripcion && $servicios && $nombre_categoria && $horario_apertura && $horario_cierre) {
             // Intentar crear el local
-            $localCreado = $this->localModel->createLocal($nombre_empresa, $nit, $direccion, $telefono, $descripcion, $servicios, $url, $nombre_categoria, $img, $horario_apertura, $horario_cierre);
+            $localCreado = $this->localModel->createLocal($nombre_empresa, $nit, $direccion, $telefono, $descripcion, $servicios, $mapa, $nombre_categoria, $img, $horario_apertura, $horario_cierre);
             
             if ($localCreado) {
                 // Si el local fue creado, redirigir a una página de éxito o detalles del local

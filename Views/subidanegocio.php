@@ -140,8 +140,8 @@ session_start();
                         <textarea class="form-control" id="descripcion" name="descripcion" required></textarea>
                     </div>
                     <div class="form-group col-12">
-                        <label for="url" class="form-label">URL</label>
-                        <input type="url" class="form-control" id="url" name="url"  placeholder="URL (puede ser cualquier texto)" oninput="updateUrlPreview()" required>
+                        <label for="mapa" class="form-label">URL</label>
+                        <input type="mapa" class="form-control" id="mapa" name="mapa"  placeholder="URL (puede ser cualquier texto)" oninput="updateUrlPreview()" required>
                         <div id="urlPreview" class="mt-2"></div>
                     </div>
                     <div class="form-row col-12">

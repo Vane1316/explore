@@ -87,22 +87,8 @@
                                 </ul>
                             </li>
                             ';
-                        } else {
-                            // Usuario no está autenticado
-                            echo '
-                            <li class="nav-item">
-                                <a class="nav-link" href="../public/views/logaut/login_registro.php">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link btn btn-primary text-white" href="../public/views/login_registro.php">Register</a>
-                            </li>
-                             <li class="nav-item">
-                            <a href="favoritos.php" class="nav-link" id="heart-link">
-                                <i class="fa fa-heart heart-icon"></i>
-                            </a>
-                            </li>
-                            ';
-                        }
+                        } 
+                        
                         ?>
 
     <!-- Cerrar Header -->

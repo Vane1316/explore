@@ -2,7 +2,7 @@
 class Database {
     // Definir los parámetros de la conexión a la base de datos
     private $host = "localhost"; // Dirección del servidor de base de datos
-    private $db_name = "loecplo_bd"; // Nombre de la base de datos
+    private $db_name = "explo"; // Nombre de la base de datos
     private $username = "root"; // Usuario de la base de datos
     private $password = ""; // Contraseña del usuario
     public $conn; // Variable para almacenar la conexión

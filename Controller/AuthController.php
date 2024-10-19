@@ -11,7 +11,8 @@ class AuthController {
     public function login($email, $password) {
         $user = $this->userModel->getUserByEmail($email);
 
-        if ($user && password_verify($password, $user['password'],)) {
+        // Verifica si el usuario existe y si la contraseña es correcta
+        if ($user && password_verify($password, $user['password'])) {
             // Verificamos si la sesión ya está iniciada
             if (session_status() == PHP_SESSION_NONE) {
                 session_start();
@@ -23,22 +24,26 @@ class AuthController {
             // Redirigir según el rol del usuario
             $this->redirigirSegunRol($user['role']);
         } else {
-            echo "Email o contraseña incorrectos.";
+            // Si el correo o la contraseña no coinciden, mostramos una alerta
+            echo "<script>
+                    alert('Email o contraseña incorrectos.');
+                    window.history.back(); // Vuelve a la página anterior
+                  </script>";
         }
     }
 
     public function redirigirSegunRol($rol) {
         // Redirigir según el rol del usuario
         switch ($rol) {
-            case 'admin':
+            case 'empresa':
                 $this->redirect('../Views/admin.php'); // Redirige a admin.php
                 break;
-            case 'user':
+            case 'usuario':
                 $this->redirect('../Views/user.php'); // Redirige a user.php
                 break;
             default:
                 // Redirige a error404 si el rol no coincide
-                $this->redirect('../Views/404/error404.php'); 
+                $this->redirect('../Views/404/error404.php');
                 break;
         }
     }
@@ -55,7 +60,7 @@ class AuthController {
             session_start();
         }
         session_destroy(); // Destruye la sesión
-        header("Location: ../Views/inicio.php"); // Redirige a la página de inicio
+        header("Location: ../public/inicio.php"); // Redirige a la página de inicio
         exit(); // Asegúrate de salir después de redirigir
     }
 }

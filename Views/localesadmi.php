@@ -232,7 +232,7 @@ footer .text-light a {
                 <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($localDetails['telefono']); ?></p>
                 <p><strong>Descripción:</strong> <?php echo htmlspecialchars($localDetails['descripcion']); ?></p>
                 <p><strong>Servicios:</strong> <?php echo htmlspecialchars($localDetails['servicios']); ?></p>
-                <p><strong>URL:</strong> <a href="<?php echo htmlspecialchars($localDetails['url']); ?>" target="_blank" class="text-primary"><?php echo htmlspecialchars($localDetails['url']); ?></a></p>
+                <p><strong>mapa:</strong> <a href="<?php echo htmlspecialchars($localDetails['mapa']); ?>" target="_blank" class="text-primary"><?php echo htmlspecialchars($localDetails['mapa']); ?></a></p>
                 <p><strong>Horario de Apertura:</strong> <?php echo htmlspecialchars($localDetails['horario_apertura']); ?></p>
                 <p><strong>Horario de Cierre:</strong> <?php echo htmlspecialchars($localDetails['horario_cierre']); ?></p>
             </div>

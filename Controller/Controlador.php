@@ -1,9 +1,8 @@
-<?php 
-    namespace Controller;
+<?php
+namespace Controller;
 
-    class Controlador{
-        public function cargarVista($nomAchivo,$datos=[]){
-            //extract($datos);
-            require_once"../Public/{$nomAchivo}.php";
-        }
+class Controlador {
+    public function cargarVista($nomAchivo, $datos = []) {
+        require_once "../Public/{$nomAchivo}.php";
     }
+}

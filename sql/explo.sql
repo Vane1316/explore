@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-10-2024 a las 08:12:01
+-- Tiempo de generación: 18-10-2024 a las 23:46:01
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `loecplo_bd`
+-- Base de datos: `explo`
 --
 
 -- --------------------------------------------------------
@@ -50,7 +50,8 @@ INSERT INTO `categorias` (`categoria_id`, `nombre_categoria`, `created_at`, `upd
 (27, 'hoteles', '2024-10-16 07:42:49', '2024-10-16 07:42:49'),
 (28, 'hoteles', '2024-10-16 07:43:30', '2024-10-16 07:43:30'),
 (29, 'otro', '2024-10-16 07:46:58', '2024-10-16 07:46:58'),
-(30, 'restaurantes', '2024-10-16 08:19:43', '2024-10-16 08:19:43');
+(30, 'restaurantes', '2024-10-16 08:19:43', '2024-10-16 08:19:43'),
+(31, 'Tienda', '2024-10-17 15:31:01', '2024-10-17 15:31:01');
 
 -- --------------------------------------------------------
 
@@ -124,7 +125,8 @@ INSERT INTO `imagenes` (`id_imagenes`, `img`, `local_id`, `created_at`, `updated
 (16, '../Views/uploads/descarga (1).jpg', 27, '2024-10-16 07:42:49', '2024-10-16 07:42:49'),
 (17, '../Views/uploads/descarga (1).jpg', 28, '2024-10-16 07:43:30', '2024-10-16 07:43:30'),
 (18, '../Views/uploads/descarga (1).jpg', 29, '2024-10-16 07:46:58', '2024-10-16 07:46:58'),
-(19, '../Views/uploads/descarga (1).jpg', 30, '2024-10-16 08:19:43', '2024-10-16 08:19:43');
+(19, '../Views/uploads/descarga (1).jpg', 30, '2024-10-16 08:19:43', '2024-10-16 08:19:43'),
+(20, '../Views/uploads/Captura de pantalla 2024-07-10 234555.png', 31, '2024-10-17 15:31:01', '2024-10-17 15:31:01');
 
 -- --------------------------------------------------------
 
@@ -140,29 +142,32 @@ CREATE TABLE `locales` (
   `telefono` varchar(50) DEFAULT NULL,
   `descripcion` varchar(350) NOT NULL,
   `servicios` varchar(250) NOT NULL,
-  `url` varchar(250) DEFAULT NULL,
+  `mapa` varchar(250) DEFAULT NULL,
   `categoria_id` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `horario_apertura` time NOT NULL,
+  `horario_cierre` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `locales`
 --
 
-INSERT INTO `locales` (`id_local`, `nombre_empresa`, `nit`, `direccion`, `telefono`, `descripcion`, `servicios`, `url`, `categoria_id`, `created_at`, `updated_at`) VALUES
-(19, 'sena', '99909', 'calle 1C 12A-29', '3105014235', 'dfreera', 'faef', 'https://www.google.com/maps.', 19, '2024-10-16 01:33:26', '2024-10-16 01:33:26'),
-(20, 'sena', 'eee', 'calle 1C 12A-29', '3105014235', 'njhghfd', 'bvhgfyt', 'https://www.google.com/maps.', 20, '2024-10-16 06:03:36', '2024-10-16 06:03:36'),
-(21, 'sena', 'eee', 'calle 1C 12A-29', '3105014235', 'njhghfd', 'bvhgfyt', 'https://www.google.com/maps.', 21, '2024-10-16 06:03:45', '2024-10-16 06:03:45'),
-(22, 'sena', 'eee', 'calle 1C 12A-29', '3105014235', 'njhghfd', 'bvhgfyt', 'https://www.google.com/maps.', 22, '2024-10-16 06:05:06', '2024-10-16 06:05:06'),
-(23, 'sena', 'cdsvd', 'calle 1C 12A-29', '3105014235', 'jhjghbn', 'ghgvj', 'https://www.google.com/maps.', 23, '2024-10-16 06:07:36', '2024-10-16 06:07:36'),
-(24, 'sena', 'cdsvd', 'calle 1C 12A-29', '3105014235', 'jhjghbn', 'ghgvj', 'https://www.google.com/maps.', 24, '2024-10-16 06:09:23', '2024-10-16 06:09:23'),
-(25, 'sena', 'eee', 'calle 1C 12A-29', '3105014235', '1234567io', 'bvhgfyt', 'https://www.google.com/maps', 25, '2024-10-16 07:40:00', '2024-10-16 07:40:00'),
-(26, 'sena', 'cdsvd', 'calle 1C 12A-29', '3105014235', 'iuytdxfcvbnm', 'ffdcfhjjj', 'https://www.google.com/maps.', 26, '2024-10-16 07:41:29', '2024-10-16 07:41:29'),
-(27, 'sena', 'cdsvd', 'calle 1C 12A-29', '3105014235', 'iuytdxfcvbnm', 'ffdcfhjjj', 'https://www.google.com/maps.', 27, '2024-10-16 07:42:49', '2024-10-16 07:42:49'),
-(28, 'sena', '8456789', 'calle 1C 12A-29', '3105014235', 'jlkhgjfdxdcvbn', 'jjbnvbhj', 'https://www.google.com/maps', 28, '2024-10-16 07:43:30', '2024-10-16 07:43:30'),
-(29, 'sena', '3456789', 'calle 1C 12A-29', '3105014235', 'cvbnm,.', 'ffdcfhjjj', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31796.40215139454!2d-74.49084861394745!3d5.014082428047944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e409a46b61023ff%3A0x82094f500526ecb4!2sVilleta%2C%20Cundinamarca!5e0!3m2!1ses!2sco!4', 29, '2024-10-16 07:46:58', '2024-10-16 07:46:58'),
-(30, 'sena', 'eee', 'calle 1C 12A-29', '3105014235', 'xcvbnm', 'zxcvbnm,', 'https://www.google.com/maps.', 30, '2024-10-16 08:19:43', '2024-10-16 08:19:43');
+INSERT INTO `locales` (`id_local`, `nombre_empresa`, `nit`, `direccion`, `telefono`, `descripcion`, `servicios`, `mapa`, `categoria_id`, `created_at`, `updated_at`, `horario_apertura`, `horario_cierre`) VALUES
+(19, 'sena', '99909', 'calle 1C 12A-29', '3105014235', 'dfreera', 'faef', 'https://www.google.com/maps.', 19, '2024-10-16 01:33:26', '2024-10-16 01:33:26', '00:00:00', '00:00:00'),
+(20, 'sena', 'eee', 'calle 1C 12A-29', '3105014235', 'njhghfd', 'bvhgfyt', 'https://www.google.com/maps.', 20, '2024-10-16 06:03:36', '2024-10-16 06:03:36', '00:00:00', '00:00:00'),
+(21, 'sena', 'eee', 'calle 1C 12A-29', '3105014235', 'njhghfd', 'bvhgfyt', 'https://www.google.com/maps.', 21, '2024-10-16 06:03:45', '2024-10-16 06:03:45', '00:00:00', '00:00:00'),
+(22, 'sena', 'eee', 'calle 1C 12A-29', '3105014235', 'njhghfd', 'bvhgfyt', 'https://www.google.com/maps.', 22, '2024-10-16 06:05:06', '2024-10-16 06:05:06', '00:00:00', '00:00:00'),
+(23, 'sena', 'cdsvd', 'calle 1C 12A-29', '3105014235', 'jhjghbn', 'ghgvj', 'https://www.google.com/maps.', 23, '2024-10-16 06:07:36', '2024-10-16 06:07:36', '00:00:00', '00:00:00'),
+(24, 'sena', 'cdsvd', 'calle 1C 12A-29', '3105014235', 'jhjghbn', 'ghgvj', 'https://www.google.com/maps.', 24, '2024-10-16 06:09:23', '2024-10-16 06:09:23', '00:00:00', '00:00:00'),
+(25, 'sena', 'eee', 'calle 1C 12A-29', '3105014235', '1234567io', 'bvhgfyt', 'https://www.google.com/maps', 25, '2024-10-16 07:40:00', '2024-10-16 07:40:00', '00:00:00', '00:00:00'),
+(26, 'sena', 'cdsvd', 'calle 1C 12A-29', '3105014235', 'iuytdxfcvbnm', 'ffdcfhjjj', 'https://www.google.com/maps.', 26, '2024-10-16 07:41:29', '2024-10-16 07:41:29', '00:00:00', '00:00:00'),
+(27, 'sena', 'cdsvd', 'calle 1C 12A-29', '3105014235', 'iuytdxfcvbnm', 'ffdcfhjjj', 'https://www.google.com/maps.', 27, '2024-10-16 07:42:49', '2024-10-16 07:42:49', '00:00:00', '00:00:00'),
+(28, 'sena', '8456789', 'calle 1C 12A-29', '3105014235', 'jlkhgjfdxdcvbn', 'jjbnvbhj', 'https://www.google.com/maps', 28, '2024-10-16 07:43:30', '2024-10-16 07:43:30', '00:00:00', '00:00:00'),
+(29, 'sena', '3456789', 'calle 1C 12A-29', '3105014235', 'cvbnm,.', 'ffdcfhjjj', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31796.40215139454!2d-74.49084861394745!3d5.014082428047944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e409a46b61023ff%3A0x82094f500526ecb4!2sVilleta%2C%20Cundinamarca!5e0!3m2!1ses!2sco!4', 29, '2024-10-16 07:46:58', '2024-10-16 07:46:58', '00:00:00', '00:00:00'),
+(30, 'sena', 'eee', 'calle 1C 12A-29', '3105014235', 'xcvbnm', 'zxcvbnm,', 'https://www.google.com/maps.', 30, '2024-10-16 08:19:43', '2024-10-16 08:19:43', '00:00:00', '00:00:00'),
+(31, 'sena', '678', 'calle 1C 12A-29', '3105014235', 'ffvfrefeergfv', 'ffdcfhjjj', 'https://www.google.com/maps', 31, '2024-10-17 15:31:01', '2024-10-17 15:31:01', '10:33:00', '10:32:00');
 
 -- --------------------------------------------------------
 
@@ -190,7 +195,8 @@ CREATE TABLE `pagos` (
 --
 
 INSERT INTO `pagos` (`id_pago`, `nombre`, `email`, `direccion`, `ciudad`, `codigo_postal`, `numero_tarjeta`, `mes_expiracion`, `anio_expiracion`, `cvv`, `plan`, `fecha_pago`) VALUES
-(4, 'Sara Vanessa', 'pagaribello@misena.edu.co', 'calle 1C 12A-29', 'VILLETA', '253410', '1234567887654323', '43', '5678', '3245', 'basico', '2024-10-17 13:10:03');
+(4, 'Sara Vanessa', 'pagaribello@misena.edu.co', 'calle 1C 12A-29', 'VILLETA', '253410', '1234567887654323', '43', '5678', '3245', 'basico', '2024-10-17 13:10:03'),
+(5, 'Sara Vanessa', 'dana@gamil.com', 'calle 1C 12A-29', 'VILLETA', '253410', '2345678987978567', '90', '8798', '6888', 'basico', '2024-10-17 21:38:25');
 
 -- --------------------------------------------------------
 
@@ -324,7 +330,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `contacto`
@@ -342,19 +348,19 @@ ALTER TABLE `favoritos`
 -- AUTO_INCREMENT de la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
-  MODIFY `id_imagenes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_imagenes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `locales`
 --
 ALTER TABLE `locales`
-  MODIFY `id_local` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_local` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `pagos`
 --
 ALTER TABLE `pagos`
-  MODIFY `id_pago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_pago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `password_resets`

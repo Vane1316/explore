@@ -90,11 +90,22 @@ session_start();
             <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                        <li class="nav-item"><a class="nav-link" href="../Views/admin.php">Inicio Administrador</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../Views/localadmi.php">Locales</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../Views/subidanegocio.php">Sube Tu Negocio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../Views/contactadmi.php">Contactos</a></li>
-
+                      
+                    <li class="nav-item">
+                            <a class="nav-link font-bold" href="../Views/admin.php">INICIO ADMINISTRADOR</a> <!-- Enlace a la página de usuario -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-bold" href="../Views/localadmi.php">LOCALES</a> <!-- Enlace a la página de locales -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-bold" href="../Views/about.php">PLANES</a> <!-- Enlace a la página de locales -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-bold"  href="../Views/contactadmi.php">CONTACTOS</a> <!-- Enlace a la página de contactos -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-bold" href="../Views/subidanegocio.php">SUBIR NEGOCIOS</a> <!-- Enlace a la página de locales -->
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -140,8 +151,8 @@ session_start();
                         <textarea class="form-control" id="descripcion" name="descripcion" required></textarea>
                     </div>
                     <div class="form-group col-12">
-                        <label for="mapa" class="form-label">URL</label>
-                        <input type="mapa" class="form-control" id="mapa" name="mapa"  placeholder="URL (puede ser cualquier texto)" oninput="updateUrlPreview()" required>
+                        <label for="mapa" class="form-label">Mapa</label>
+                        <input type="mapa" class="form-control" id="mapa" name="mapa"  placeholder="mapa (puede ser cualquier texto)" oninput="updateUrlPreview()" required>
                         <div id="urlPreview" class="mt-2"></div>
                     </div>
                     <div class="form-row col-12">

@@ -44,20 +44,21 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
                         <li class="nav-item">
-                            <a class="nav-link" href="/inicio.php">Inicio</a> <!-- Enlace a la página de inicio -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Public/inicio.php">INICIO</a> <!-- Enlace a la página de inicio -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/localesinicio.php">Locales</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/localesinicio.php">LOCALES</a> <!-- Enlace a la página de locales -->
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Views/contact.php">Contactos</a> <!-- Enlace a la página de contactos -->
-                        </li>
+                     <!--   <li class="nav-item">
+                            <a class="nav-link" href="../Views/contact.php">Contactos</a> (Enlace a la página de contactos)
+                        </li> 
+                    -->
                         <!-- Links para login y registro -->
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary text-white" href="../Views/inicio_sesion.php">Login</a> <!-- Enlace a la página de login -->
+                            <a class="nav-link btn btn-primary text-white nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/inicio_sesion.php">LOGIN</a> <!-- Enlace a la página de login -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary text-white" href="../Views/registro.php">Register</a> <!-- Enlace a la página de registro -->
+                            <a class="nav-link btn btn-primary text-white nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/registro.php">REGISTER</a> <!-- Enlace a la página de registro -->
                         </li>
 
                     </ul>
@@ -67,72 +68,197 @@
     </nav>
     <!-- Cerrar Header -->
     </div>
-
-    <!-- Iniciar Banner Principal -->
-    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel"> <!-- Carrusel de imágenes -->
-        <ol class="carousel-indicators"> <!-- Indicadores del carrusel -->
-            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li> <!-- Primer indicador -->
-            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li> <!-- Segundo indicador -->
-            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li> <!-- Tercer indicador -->
-        </ol>
-        <div class="carousel-inner"> <!-- Contenedor de elementos del carrusel -->
-            <div class="carousel-item active"> <!-- Primer elemento del carrusel -->
-                <div class="container">
-                    <div class="row p-5">
-                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="../public/img/petronio.jpg" alt=""> <!-- Imagen del primer elemento -->
-                        </div>
-                        <div class="col-lg-6 mb-0 d-flex align-items-center">
-                            <div class="text-align-left align-self-center">
-                                <h1 class="h1 text-success"><b>Petronio Cocina De Autor</b></h1> <!-- Título del primer elemento -->
-                                <p>
-                                    En Petronio - Cocina de autor, cada uno de nuestros platos están inspirados en Colombia, su historia, su gente y su cultura. La combinación de modernidad y tendencias con tradición son el punto de encuentro en Petronio. Te invitamos a vivir esta experiencia llena de sabor, historia, música, texturas y aromas. <a rel="sponsored" class="text-success" href="shop-single-petronio.php">Mirar más sobre esto</a>
-                                </p> <!-- Descripción del primer elemento -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item"> <!-- Segundo elemento del carrusel -->
-                <div class="container">
-                    <div class="row p-5">
-                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="../public/img/lancaster.jpg" alt=""> <!-- Imagen del segundo elemento -->
-                        </div>
-                        <div class="col-lg-6 mb-0 d-flex align-items-center">
-                            <div class="text-align-left">
-                                <h1 class="h1">Hotel Lancaster House</h1> <!-- Título del segundo elemento -->
-                                <p>Descubre por qué tantos viajeros ven Lancaster House como el hotel ideal cuando visitan Bogotá.<a rel="sponsored" class="text-success" href="shop-single-lancaster.php">Mirar más sobre esto</a></p> <!-- Descripción del segundo elemento -->
-                            </div>
+<!-- Iniciar Banner Principal -->
+<div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicadores del carrusel -->
+    <ol class="carousel-indicators">
+        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+    </ol>
+    
+    <div class="carousel-inner">
+        <!-- Primer elemento del carrusel -->
+        <div class="carousel-item active">
+            <div class="container">
+                <div class="row p-5 align-items-center">
+                    <div class="col-lg-6 mb-0 d-flex align-items-center">
+                        <div class="text-align-left align-self-center animated fadeInLeft">
+                            <h1 class="h1 text-success"><b>Petronio Cocina De Autor</b></h1>
+                            <p class="animate__animated animate__fadeIn animate__delay-1s">
+                                En Petronio - Cocina de autor, cada plato es una obra maestra inspirada en Colombia. Fusionamos tradición y modernidad para crear experiencias culinarias únicas.
+                            </p>
+                          
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="carousel-item"> <!-- Tercer elemento del carrusel -->
-                <div class="container">
-                    <div class="row p-5">
-                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="../public/img/paloquemao.jpg" alt=""> <!-- Imagen del tercer elemento -->
-                        </div>
-                        <div class="col-lg-6 mb-0 d-flex align-items-center">
-                            <div class="text-align-left">
-                                <h1 class="h1">Plaza de Mercado Paloquemao</h1> <!-- Título del tercer elemento -->
-                                <p>
-                                    La Plaza de Mercado de Paloquemao es un lugar emblemático para el abastecimiento de familias y negocios en Bogotá.<a rel="sponsored" class="text-success" href="shop-single-paloquemao.php">Mirar más sobre esto</a>
-                                </p> <!-- Descripción del tercer elemento -->
-                            </div>
-                        </div>
+                    <div class="col-lg-6 animated fadeInRight">
+                        <img class="img-fluid rounded shadow" src="../public/img/petronio.jpg" alt="Petronio Cocina De Autor">
                     </div>
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev"> <!-- Control anterior del carrusel -->
-            <i class="fas fa-chevron-left"></i> <!-- Icono para control anterior -->
-        </a>
-        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next"> <!-- Control siguiente del carrusel -->
-            <i class="fas fa-chevron-right"></i> <!-- Icono para control siguiente -->
-        </a>
+        
+        <!-- Segundo elemento del carrusel -->
+        <div class="carousel-item">
+            <div class="container">
+                <div class="row p-5 align-items-center">
+                    <div class="col-lg-6 mb-0 d-flex align-items-center">
+                        <div class="text-align-left animated fadeInLeft">
+                            <h1 class="h1 text-primary"><b>Hotel Lancaster House</b></h1>
+                            <p class="animate__animated animate__fadeIn animate__delay-1s">
+                                Experimenta el lujo y la comodidad en el corazón de Bogotá. Con habitaciones elegantes y servicios de primera clase, Lancaster House es tu hogar lejos de casa.
+                            </p>
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-6 animated fadeInRight">
+                        <img class="img-fluid rounded shadow" src="../public/img/lancaster.jpg" alt="Hotel Lancaster House">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tercer elemento del carrusel -->
+        <div class="carousel-item">
+            <div class="container">
+                <div class="row p-5 align-items-center">
+                    <div class="col-lg-6 mb-0 d-flex align-items-center">
+                        <div class="text-align-left animated fadeInLeft">
+                            <h1 class="h1 text-warning"><b>Plaza de Mercado Paloquemao</b></h1>
+                            <p class ="animate__animated animate__fadeIn animate__delay-1s">
+                                Descubre la riqueza gastronómica de Colombia en la Plaza de Mercado Paloquemao. Un lugar emblemático para disfrutar de la comida y la cultura colombiana.
+                            </p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-6 animated fadeInRight">
+                        <img class="img-fluid rounded shadow" src="../public/img/paloquemao.jpg" alt="Plaza de Mercado Paloquemao">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    <!-- Controles del carrusel -->
+    <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+        <i class="fas fa-chevron-right"></i>
+    </a>
+</div>
+
+
+
+<!-- Sección de Destacados -->
+<section class="bg-light">
+    <div class="container py-5">
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Destacados de la Semana</h1>
+                <p>Negocios Imperdibles En Villeta</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <a href="shop-single.html">
+                        <img src="../Public/img/estelar3.jpg" class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <ul class="list-unstyled d-flex justify-content-between">
+
+                            
+                        </ul>
+                        <a href="shop-single.html" class="h2 text-decoration-none text-dark">Estelar Suites Jones</a>
+                        <p class="card-text">
+                        El Hotel está ubicado en Chapinero Alto barrio de fácil acceso gracias a sus corredores viales como lo son la Carrera Séptima, Avenida 39, la carrera 5ta y la avenida circunvalar, los cuales reducen los tiempos de recorrido entre el sur , centro histórico y norte de la ciudad. Su estratégica ubicación a pocas cuadras del eje financiero de la ciudad, lo hace el Hotel ideal para el desarrollo de sus negocios, eventos y reuniones en Bogotá.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <a href="shop-single.html">
+                        <img src="../Public/img/hilton1.jpg" class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <ul class="list-unstyled d-flex justify-content-between">
+                            
+                        </ul>
+                        <a href="shop-single.html" class="h2 text-decoration-none text-dark">Hilton Garden Inn Bogota Airport</a>
+                        <p class="card-text">
+                        Hilton Garden Inn Bogota Airport es una magnífica elección para los viajeros que visiten Bogotá, ya que ofrece un ambiente con encanto y numerosos servicios diseñados para mejorar tu estancia. Ubicado cerca de la mayoría de los puntos de referencia de Bogotá, como BotaniK (0,9 km) y la Catedral de Fontibón (2,9 km), es un fantástico destino para turistas.
+                        </p>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <a href="shop-single.html">
+                        <img src="../Public/img/mercaboy3.png" class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <ul class="list-unstyled d-flex justify-content-between">
+                            
+                           
+                        </ul>
+                        <a href="shop-single.html" class="h2 text-decoration-none text-dark">Mercaboy Mercados y Droguería</a>
+                        <p class="card-text">
+                        Mercaboy Mercados y Droguería es un establecimiento que combina servicios de supermercado y farmacia, ofreciendo a sus clientes una amplia variedad de productos en un solo lugar. En la sección de mercados, los usuarios pueden encontrar alimentos frescos, productos de despensa, lácteos, carnes, frutas y verduras, así como artículos de limpieza y cuidado personal. En la droguería, Mercaboy ofrece medicamentos de venta libre, productos farmacéuticos, suplementos y artículos para la salud y el bienestar.
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Testimonios -->
+<section class="bg-light">
+    <div class="container py-5">
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Lo que nuestros clientes dicen</h1>
+                <p>Experiencias reales de nuestros clientes</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="card-text">
+                            "Me encanta ir a Mercaboy, siempre encuentro todo lo que necesito sin tener que hacer muchas paradas. La sección de mercado tiene productos frescos, y la droguería es bastante completa. Me gustaría que tuvieran más ofertas en productos de higiene personal, pero en general es un excelente lugar para hacer las compras de la semana."
+                        </p>
+                        <p class="text-muted">- Juan Pérez</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="card-text">
+                            "Tuve una estancia maravillosa en el Hilton Garden Inn Bogotá Airport. El servicio fue excepcional desde el momento en que llegué. Las habitaciones eran modernas, limpias y cómodas, lo que me permitió descansar antes de mi vuelo. Además, el restaurante del hotel ofrece una excelente variedad de platos."
+                        </p>
+                        <p class="text-muted">- María Rodríguez</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="card-text">
+                            "El Estelar Suites Jones tiene un ambiente cálido y acogedor. Me hospedé aquí durante un viaje de trabajo y el servicio al cliente fue excelente. El desayuno incluido es variado y delicioso. Mi única sugerencia sería mejorar la velocidad del Wi-Fi, ya que por momentos era un poco lenta. Sin embargo, el hotel es cómodo."
+                        </p>
+                        <p class="text-muted">- Carlos Gómez</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!--Brands-->
 <section class="bg-light py-5"> <!-- Sección que muestra las marcas con fondo claro y espaciado vertical -->

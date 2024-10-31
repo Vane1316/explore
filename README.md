@@ -1,1 +1,1 @@
-# explorar
+# exploraLocal 

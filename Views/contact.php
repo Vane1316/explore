@@ -54,14 +54,16 @@ session_start(); // Inicia la sesión para el manejo de usuarios
         #nombre, #email {
             margin-top: 20px; /* Añadir espacio arriba de nombre y correo */
         }
+
+       
     </style>
 
 </head>
 
 <body>
 
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow"> <!-- Barra de navegación -->
+     <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-light shadow"> <!-- Barra de navegación -->
         <div class="container d-flex justify-content-between align-items-center"> <!-- Contenedor flex para alinear elementos -->
             <a class="navbar-brand text-success logo h1 align-self-center d-flex align-items-center" href="index.php"> <!-- Logo de la marca -->
                 <img src="../public/img/LogoLocalExplore.png" alt="Logo" class="logo-img"> <!-- Imagen del logo -->
@@ -76,12 +78,14 @@ session_start(); // Inicia la sesión para el manejo de usuarios
             <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav"> <!-- Navegación colapsable -->
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
+                    
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/inicio.php">Inicio</a> <!-- Enlace a la página de inicio -->
+                            <a class="nav-link" href="../Public/inicio.php">Inicio</a> <!-- Enlace a la página de usuario -->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../Views/localesinicio.php">Locales</a> <!-- Enlace a la página de locales -->
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="../Views/contact.php">Contactos</a> <!-- Enlace a la página de contactos -->
                         </li>
@@ -92,78 +96,134 @@ session_start(); // Inicia la sesión para el manejo de usuarios
                         <li class="nav-item">
                             <a class="nav-link btn btn-primary text-white" href="../Views/registro.php">Register</a> <!-- Enlace a la página de registro -->
                         </li>
-
                     </ul>
                 </div>
             </div>
+
+            <div class="navbar align-self-center d-flex"> <!-- Sección de búsqueda en la navbar -->
+                <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3"> <!-- Oculta en pantallas grandes -->
+                    <div class="input-group">
+                        <!-- Campo de búsqueda móvil -->
+                        <input type="text" class="form-control" id="inputMobileSearch" placeholder="Buscar ..."> <!-- Campo de entrada para búsqueda -->
+                        <div class="input-group-text">
+                            <i class="fa fa-fw fa-search"></i> <!-- Icono de búsqueda -->
+                        </div>
+                    </div>
+                </div>           
+            </div>
         </div>
+         
+<!-- Contenido adicional del menú -->
+<div class="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4" id="nav-content">
+    <div class="auth flex items-center w-full md:w-full">
+            
     </nav>
-    <!-- Cerrar Header -->
+    
+
+    <!-- Modal de Búsqueda -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> <!-- Modal para búsqueda -->
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <!-- Botón para cerrar el modal -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0"> <!-- Formulario dentro del modal -->
+                <div class="input-group mb-2">
+                    <!-- Campo de búsqueda en el modal -->
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Buscar ..."> <!-- Campo de entrada para búsqueda -->
+                    <button type="submit" class="input-group-text bg-success text-light"> <!-- Botón de envío -->
+                        <i class="fa fa-fw fa-search text-white"></i> <!-- Icono de búsqueda -->
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+<!-- Cerrar Header -->>
 
 
 <!-- Inicio del Contenido -->
 <div class="container-fluid bg-light py-5">
     <div class="col-md-6 m-auto text-center">
-        <h1 class="h1">Contactos Infinity</h1>
+        <h1 class="h1">Contacte a Infinity</h1>
         <p>Dinos tus inconvenientes con nuestra pagina o servicios</p>
     </div>
 </div>
 
-<!-- Mapa de Google -->
-<div class="map-container">
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31796.404217183986!2d-74.470206!3d5.01404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e409a46b61023ff%3A0x82094f500526ecb4!2sVilleta%2C%20Cundinamarca!5e0!3m2!1ses!2sco!4v1724362127878!5m2!1ses!2sco" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-</div>
+<style>
+        /* Estilos para el contenedor del mapa */
+        .map-container {
+            position: relative;
+            width: 80%;
+            height: 0;
+            padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+            margin: 0 auto;
+            overflow: hidden; /* Evita que el contenido se salga del contenedor */
+        }
+
+        /* Estilos para el iframe del mapa */
+        .map-responsive {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor del mapa -->
+    <div class="map-container">
+        <div class="map-responsive">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31796.404217183986!2d-74.470206!3d5.01404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e409a46b61023ff%3A0x82094f500526ecb4!2sVilleta%2C%20Cundinamarca!5e0!3m2!1ses!2sco!4v1724362127878!5m2!1ses!2sco" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
 <!-- Formulario de Contacto -->
 <div class="container py-5">
     <div class="row py-5 justify-content-center">
-        
-        <form action="../Public/enviarContacto.php" method="POST" class="p-8 rounded-md shadow-md" style="background-color: #f7f7f7; border: 2px solid #333; max-width: 700px; width: 100%; font-size: 18px;">
+        <form action="../Public/enviarContacto.php" method="POST" class="p-4 rounded-md shadow-lg" style="background-color: #ffffff; border-radius: 15px; max-width: 700px; width: 100%; font-size: 18px; transition: transform 0.3s; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
             <!-- Título del formulario -->
-            <h2 class="text-center mb-5" style="color: #000000; font-family: 'Bernard MT Condensed'; font-size: 40px; font-weight: bold;">CONTÁCTENOS</h2>
+            <h2 class="text-center mb-4" style="color: #333; font-family: 'Arial', sans-serif; font-size: 36px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">CONTÁCTENOS</h2>
 
             <!-- Contenedor de nombre y email en una sola fila -->
             <div class="row">
                 <!-- Nombre -->
                 <div class="col-md-6 mb-3">
                     <label for="nombre" class="block text-sm font-medium" style="color: #333;">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" required style="border: 1px solid #333; color: #333; width: 100%; height: 42px; padding: 8px;">
+                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" required style="border: 1px solid #ccc; color: #333; width: 100%; height: 42px; padding: 8px; border-radius: 8px; transition: border-color 0.3s;" onfocus="this.style.borderColor='#28a745';">
                 </div>
 
                 <!-- Email -->
                 <div class="col-md-6 mb-3">
                     <label for="email" class="block text-sm font-medium" style="color: #333;">Email</label>
-                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required style="border: 1px solid #333; color: #333; width: 100%; height: 42px; padding: 8px;">
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required style="border: 1px solid #ccc; color: #333; width: 100%; height: 42px; padding: 8px; border-radius: 8px; transition: border-color 0.3s;" onfocus="this.style.borderColor='#28a745';">
                 </div>
             </div>
 
             <!-- Motivo -->
             <div class="mt-4 mb-3">
                 <label for="motivo" class="block text-sm font-medium" style="color: #333;">Motivo</label>
-                <input type="text" id="motivo" name="motivo" class="form-control" placeholder="Motivo" required style="border: 1px solid #333; color: #333; width: 100%; height: 42px; padding: 8px;">
+                <input type="text" id="motivo" name="motivo" class="form-control" placeholder="Motivo" required style="border: 1px solid #ccc; color: #333; width: 100%; height: 42px; padding: 8px; border-radius: 8px; transition: border-color 0.3s;" onfocus="this.style.borderColor='#28a745';">
             </div>
 
             <!-- Comentario -->
             <div class="mt-4 mb-3">
                 <label for="comentario" class="block text-sm font-medium" style="color: #333;">Comentario</label>
-                <textarea id="comentario" name="comentario" rows="5" class="form-control" placeholder="Escribe tu comentario" required style="border: 1px solid #333; color: #333; width: 100%; padding: 10px;"></textarea>
+                <textarea id="comentario" name="comentario" rows="5" class="form-control" placeholder="Escribe tu comentario" required style="border: 1px solid #ccc; color: #333; width: 100%; padding: 10px; border-radius: 8px; transition: border-color 0.3s;" onfocus="this.style.borderColor='#28a745';"></textarea>
             </div>
 
             <!-- Botón Enviar -->
             <div class="mt-4 text-right">
-                <button type="submit" class="btn btn-success font-bold py-2 px-4 rounded" style="background-color: #28a745; border: 2px solid #333; color: #fff; font-size: 18px; padding: 10px 20px; transition: background-color 0.3s;">
-                    Enviar
-                </button>
+            <center> <button type="submit" class="btn btn-success font-bold py-2 px-4 rounded" style="background-color: #28a745; border: none; color: #fff; font-size: 18px; padding: 10px 20px; border-radius: 8px; transition: background-color 0.3s, transform 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';"> Enviar </button></center>
             </div>
         </form>
     </div>
 </div>
-
-
 
 <!--Brands-->
 <section class="bg-light py-5"> <!-- Sección que muestra las marcas con fondo claro y espaciado vertical -->
@@ -313,7 +373,8 @@ session_start(); // Inicia la sesión para el manejo de usuarios
         </div>
     </div>
 </footer>
-
+<script src="../public/js/jquery.min.js"></script>
+    <script src="../public/js/slick.min.js"></script>
 <!-- JavaScript opcional para mostrar el año dinámicamente -->
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear(); // Asigna el año actual al elemento con ID 'current-year'
@@ -323,7 +384,7 @@ session_start(); // Inicia la sesión para el manejo de usuarios
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Script para usar iconos de Font Awesome -->
 
 <!-- CSS opcional para estilos adicionales -->
-<style>
+<styles>
     #footer { 
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
@@ -340,9 +401,10 @@ session_start(); // Inicia la sesión para el manejo de usuarios
     .fs-5 { 
         font-size: 1.25rem; 
     }
-</style>
+</styles>
 
 <!-- End Footer -->
+
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>

@@ -14,157 +14,208 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="../public/css/fontawesome.min.css">
 
+</head>
+<body>
+
+
+
+ <!-- Header -->
+ <nav class="navbar navbar-expand-lg navbar-light shadow">
+    <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand text-success logo h1 align-self-center d-flex align-items-center" href="index.php">
+            <img src="../public/img/LogoLocalExplore.png" alt="Logo" class="logo-img">
+            <span class="ml-2">ExploreLocal</span>
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+            <div class="flex-fill">
+                <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> 
+                <li class="nav-item">
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Public/inicio.php">INICIO</a> <!-- Enlace a la página de inicio -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/localesinicio.php">LOCALES</a> <!-- Enlace a la página de locales -->
+                        </li>
+                     <!--   <li class="nav-item">
+                            <a class="nav-link" href="../Views/contact.php">Contactos</a> (Enlace a la página de contactos)
+                        </li> 
+                    -->
+                        <!-- Links para login y registro -->
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/inicio_sesion.php">LOGIN</a> <!-- Enlace a la página de login -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/registro.php">REGISTER</a> <!-- Enlace a la página de registro -->
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+    <!-- Cerrar Header -->
     <style>
         body {
-            margin: 0;
-            padding: 0;
             font-family: 'Roboto', sans-serif;
             background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
         }
 
         .form-container {
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px; /* Esquinas más redondeadas */
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
-            padding: 50px 40px; /* Espaciado interno aumentado */
-            width: 450px; /* Ancho aumentado */
-            margin: 40px auto; 
-            text-align: left;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
         }
 
-        .my-form h1 {
-            margin-bottom: 25px;
-            font-weight: 600; /* Peso de la fuente más fuerte */
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 120px;
+            height: auto;
+        }
+
+        .form-title {
+            font-size: 24px;
             color: #333;
             text-align: center;
-            font-size: 24px; /* Tamaño de fuente del título aumentado */
-        }
-
-        .form-label {
-            display: block;
             margin-bottom: 10px;
-            color: #555;
-            font-weight: 500; /* Peso de la fuente del label */
         }
 
-        .form-input {
+        .form-subtitle {
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .input-group input {
             width: 100%;
-            padding: 12px; /* Espaciado interno aumentado */
+            padding: 10px 20px;
             border: 1px solid #ccc;
             border-radius: 10px;
-            transition: border-color 0.3s;
-            font-size: 16px; /* Tamaño de fuente aumentado */
+            font-size: 16px;
+            color: #333;
         }
 
-        .form-input:focus {
-            border-color: #007bff;
-            outline: none;
+        .input-group label {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            font-size: 16px;
+            color: #999;
+            pointer-events: none;
+            transition: 0.3s ease all;
+        }
+
+        .input-group input:focus,
+        .input-group input:not(:placeholder-shown) {
+            border-color: #4CAF50;
+        }
+
+        .input-group input:focus + label,
+        .input-group input:not(:placeholder-shown) + label {
+            top: -12px;
+            left: 10px;
+            font-size: 12px;
+            color: #4CAF50;
+            background-color: #fff;
+            padding: 0 5px;
         }
 
         .btn-submit {
-            width: 100%;
-            padding: 12px;
-            background-color: #007bff;
-            color: white;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
             border: none;
             border-radius: 10px;
-            font-size: 18px; /* Tamaño de fuente aumentado */
+            font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            display: block;  /* Cambio: de inline a block */
+            margin: 0 auto;  /* Añadido: para centrar el botón */
+            width: 50%;
         }
 
         .btn-submit:hover {
-            background-color: #0056b3;
-        }
-
-        .text-link {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .text-link:hover {
-            text-decoration: underline;
+            background-color: #3e8e41;
         }
 
         .footer-text {
+            font-size: 14px;
+            color: #666;
             text-align: center;
-            opacity: 0.6;
-            color: white;
             margin-top: 20px;
         }
+
+        .footer-text a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            color: #3e8e41;
+        }
+      
+    .navbar-brand {
+        margin-right: 50px; /* Espacio entre el logo y los enlaces */
+    }
+    @media (max-width: 991px) {
+        .navbar-brand {
+            margin-right: 20px; /* Ajuste para pantallas pequeñas */
+        }
+    }
     </style>
 </head>
 <body>
-
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow">
-        <div class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand text-success logo h1 align-self-center d-flex align-items-center" href="index.php">
-                <img src="../public/img/LogoLocalExplore.png" alt="Logo" class="logo-img">
-                <span class="ml-2">ExploreLocal</span>
-            </a>
-
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
-                <div class="flex-fill">
-                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Views/inicio.php">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Views/localesinicio.php">Locales</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Views/contact.php">Contactos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-primary text-white" href="../Views/inicio_sesion.php">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-primary text-white" href="../Views/registro.php">Register</a>
-                        </li>
-                    </ul>
+    <div class="form-wrapper">
+        <div class="form-container animate__animated animate__fadeIn">
+            <img src="../public/img/LogoLocalExplore.png" alt="Logo" class="logo">
+            <h1 class="form-title text-black font-bold" style="font-family: 'Algerian', sans-serif; font-size: 34px;">Inicio de Sesión</h1>
+            <p class="form-title text-black font-bold">Accede a tu cuenta</p>
+            <form action="../Public/login_action.php" method="post" onsubmit="return validarFormulario()">
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder=" " required>
+                    <label for="email">Correo Electrónico</label>
                 </div>
-            </div>
 
+                <div class="input-group">
+                    <input type="password" id="password " name="password" placeholder=" " required>
+                    <label for="password">Contraseña</label>
+                </div>
+
+                <button type="submit" class="btn-submit">Inicio de sesión</button>
+
+                <div class="footer-text">
+                    <p>¿Aún no estás en ExploreLocal? <a href="../Views/registro.php">Regístrate</a></p>
+                     <!--todavia no  esta disponible -->
+                  <p>¿Olvidaste tu contraseña? <a href="../Views/recuperar_contrasena.php">Recuperar contraseña</a></p>
+                </div>
+            </form>
         </div>
-    </nav>
-    <!-- Cerrar Header -->
-
-    <br>
-
-    <div class="form-container">
-        <form action="../Public/login_action.php" method="post" class="my-form" onsubmit="return validarFormulario()">
-            <h1>Inicio de Sesión</h1>
-            <div class="mb-3">
-                <label for="email" class="form-label">Correo Electrónico</label>
-                <input type="email" id="email" name="email" placeholder="Email" class="form-input" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="password" class="form-label">Contraseña</label>
-                <input type="password" id="password" name="password" placeholder="Contraseña" class="form-input" required>
-            </div>
-
-            <div class="flex items-center justify-between mb-5">
-                <a href="../Views/forgot_password.php" class="text-sm text-blue-500 hover:underline">¿Olvidaste tu contraseña?</a>
-            </div>
-
-            <button type="submit" class="btn-submit">Inicio de sesión</button>
-
-            <div class="text-center mt-3">
-                <p>¿Aún no estás en Saudade? <a href="../Views/registro.php" class="text-link">Regístrate</a></p>
-            </div>
-        </form>
     </div>
-
-    <div class="footer-text">
-        <p>Si continúas, aceptas los Términos del servicio y confirmas que has leído nuestra política de privacidad.</p>
-    </div>
-
     <script>
         function validarFormulario() {
             var email = document.getElementById("email").value;
@@ -234,7 +285,7 @@
         </div>
     </footer>
     <!-- End Footer -->
-
+    <script src="../public/js/jquery.min.js"></script> <!-- Script de jQuery -->
     <script src="../public/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

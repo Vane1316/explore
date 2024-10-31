@@ -1,5 +1,5 @@
 <?php
-require_once '../Models/categoriaModelo.php'; // Incluir el modelo
+require_once '../Models/CategoriaModel.php'; // Incluir el modelo
 
 class CategoriaController {
     private $categoriaModel;
@@ -11,7 +11,9 @@ class CategoriaController {
 
     // Método para obtener los locales de una categoría específica
     public function getLocalesByCategoria($categoria_id) {
-        return $this->categoriaModel->getAllCategorias($categoria_id);
+        return $this->categoriaModel->getAllLocalesByCategoria($categoria_id);
     }
+    
 }
 ?>
+

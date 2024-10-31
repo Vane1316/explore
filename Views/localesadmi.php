@@ -174,21 +174,22 @@ footer .text-light a {
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
                     
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Views/admin.php">Inicio Administrador</a> <!-- Enlace a la página de usuario -->
+                     <li class="nav-item">
+                            <a class="nav-link" href="../Views/admin.php">INICIO ADMINISTRADOR</a> <!-- Enlace a la página de usuario -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/localadmi.php">Locales</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link " href="../Views/localadmi.php">LOCALES</a> <!-- Enlace a la página de locales -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/about.php">Planes</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link " href="../Views/about.php">PLANES</a> <!-- Enlace a la página de locales -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/contactadmi.php">Contactos</a> <!-- Enlace a la página de contactos -->
+                            <a class="nav-link " href="../Views/contactadmi.php">CONTACTOS</a> <!-- Enlace a la página de contactos -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/subidanegocio.php">Subir Negocio</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link" href="../Views/subidanegocio.php">SUBIR NEGOCIOS</a> <!-- Enlace a la página de locales -->
                         </li>
+                     
 
                     </ul>
                 </div>
@@ -208,40 +209,172 @@ footer .text-light a {
     </nav>
     
 <!-- Cerrar Header -->
-
-
-
-<div class="container py-5">
+<div class="container py-5 animate__animated animate__fadeIn">
     <?php if ($localDetails): ?>
-        <h2 class="text-center text-success display-4 mb-4"><?php echo htmlspecialchars($localDetails['nombre_empresa']); ?></h2>
+        <h2 class="text-center text-primary display-4 mb-4 animate__animated animate__slideInDown"><?php echo htmlspecialchars($localDetails['nombre_empresa']); ?></h2>
         <div class="main-content">
-            <div class="image-container">
+            <div class="image-container animate__animated animate__zoomIn">
                 <?php if ($imagenes): ?>
-                    <img id="main-image" src="<?php echo htmlspecialchars($imagenes[0]['img']); ?>" alt="Imagen del Local" class="img-fluid">
-                    <div class="arrow-container">
-                        <button class="arrow" onclick="changeImage(-1)">&#10094;</button>
-                        <button class="arrow" onclick="changeImage(1)">&#10095;</button>
+                    <div class="image-slider">
+                        <img id="main-image" src="<?php echo htmlspecialchars($imagenes[0]['img']); ?>" alt="Imagen del Local" class="img-fluid rounded">
+                        <div class="arrow-container">
+                            <button class="arrow left" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></button>
+                            <button class="arrow right" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></button>
+                        </div>
                     </div>
                 <?php else: ?>
                     <p class="text-muted">No hay imágenes disponibles para este local.</p>
                 <?php endif; ?>
             </div>
-            <div class="info-container">
-                <p><strong>NIT:</strong> <?php echo htmlspecialchars($localDetails['nit']); ?></p>
-                <p><strong>Dirección:</strong> <?php echo htmlspecialchars($localDetails['direccion']); ?></p>
-                <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($localDetails['telefono']); ?></p>
-                <p><strong>Descripción:</strong> <?php echo htmlspecialchars($localDetails['descripcion']); ?></p>
-                <p><strong>Servicios:</strong> <?php echo htmlspecialchars($localDetails['servicios']); ?></p>
-                <p><strong>mapa:</strong> <a href="<?php echo htmlspecialchars($localDetails['mapa']); ?>" target="_blank" class="text-primary"><?php echo htmlspecialchars($localDetails['mapa']); ?></a></p>
-                <p><strong>Horario de Apertura:</strong> <?php echo htmlspecialchars($localDetails['horario_apertura']); ?></p>
-                <p><strong>Horario de Cierre:</strong> <?php echo htmlspecialchars($localDetails['horario_cierre']); ?></p>
+            <div class="info-container animate__animated animate__slideInRight">
+                <div class="info-card">
+                    <p><i class="fas fa-id-card"></i> <strong>NIT:</strong> <?php echo htmlspecialchars($localDetails['nit']); ?></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Dirección:</strong> <?php echo htmlspecialchars($localDetails['direccion']); ?></p>
+                    <p><i class="fas fa-phone"></i> <strong>Teléfono:</strong> <?php echo htmlspecialchars($localDetails['telefono']); ?></p>
+                    <p><i class="fas fa-info-circle"></i> <strong>Descripción:</strong> <?php echo htmlspecialchars($localDetails['descripcion']); ?></p>
+                    <p><i class="fas fa-concierge-bell"></i> <strong>Servicios:</strong> <?php echo htmlspecialchars($localDetails['servicios']); ?></p>
+                    <p><i class="fas fa-map"></i> <strong>Mapa:</strong> <a href="<?php echo htmlspecialchars($localDetails['mapa']); ?>" target="_blank" class="btn btn-outline-primary btn-sm">Ver en Google Maps</a></p>
+                    <p><i class="far fa-clock"></i> <strong>Horario:</strong> <?php echo htmlspecialchars($localDetails['horario_apertura']); ?> - <?php echo htmlspecialchars($localDetails['horario_cierre']); ?></p>
+                </div>
             </div>
         </div>
     <?php else: ?>
-        <p class="text-danger">No se encontraron detalles para este local.</p>
+        <p class="text-danger animate__animated animate__shakeX">No se encontraron detalles para este local.</p>
     <?php endif; ?>
 </div>
 
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+    flex-direction: row; /* Agregar esta propiedad */
+}
+
+
+.image-container {
+    flex: 1 1 40%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+    max-width: 100%; /* Asegura que el contenedor no exceda el ancho del padre */
+    height: 450px;
+    overflow: hidden;
+}
+
+
+    .image-container:hover {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .image-slider {
+        position: relative;
+    }
+
+    .image-slider img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    border-radius: 10px;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    height: 420px; /* Permite que la altura se ajuste automáticamente */
+}
+
+    .arrow-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .arrow {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        margin: 0 10px;
+        font-size: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    .arrow:hover {
+        background-color: #218838;
+    }
+
+    
+    .info-container {
+    flex: 1 1 50%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+    max-height: 600px;
+    overflow-y: auto;
+}
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column; /* Cambia a una columna en pantallas más pequeñas */
+    }
+
+    .image-container, .info-container {
+        flex: 1 1 100%; /* Cada contenedor ocupará el 100% del ancho */
+    }
+}
+.info-container:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+    .info-card {
+        padding: 20px;
+    }
+
+    .info-card p {
+        margin: 15px 0;
+        font-size: 1.1em;
+        color: #333;
+    }
+
+    .info-card strong {
+        color: #28a745;
+    }
+
+    .info-card i {
+        margin-right: 10px;
+        font-size: 18px;
+    }
+
+    footer {
+        background-color: #343a40;
+        color: white;
+        padding: 20px 0;
+    }
+
+    footer .text-light a {
+        color: #adb5bd;
+    }
+</style>
 
 
 <script>

@@ -75,21 +75,20 @@ session_start(); // Inicia la sesión para el manejo de usuarios
             <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav"> <!-- Navegación colapsable -->
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Views/admin.php">Inicio Administrador</a> <!-- Enlace a la página de inicio -->
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="../views/localadmi.php">Locales</a> <!-- Enlace a la página de locales -->
+                    <li class="nav-item">
+                            <a class="nav-link " href="../Views/admin.php">INICIO ADMINISTRADOR</a> <!-- Enlace a la página de usuario -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/about.php">Planes</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link " href="../Views/localadmi.php">LOCALES</a> <!-- Enlace a la página de locales -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/contactadmi.php">Contactos</a> <!-- Enlace a la página de contactos -->
+                            <a class="nav-link " href="../Views/about.php">PLANES</a> <!-- Enlace a la página de locales -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/subidanegocio.php">Subir Negocio</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link " href="../Views/contactadmi.php">CONTACTOS</a> <!-- Enlace a la página de contactos -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../Views/subidanegocio.php">SUBIR NEGOCIOS</a> <!-- Enlace a la página de locales -->
                         </li>
                      
                        
@@ -146,48 +145,45 @@ session_start(); // Inicia la sesión para el manejo de usuarios
 <!-- Formulario de Contacto -->
 <div class="container py-5">
     <div class="row py-5 justify-content-center">
-        
-        <form action="../Public/enviarAdmiContacto.php" method="POST" class="p-8 rounded-md shadow-md" style="background-color: #f7f7f7; border: 2px solid #333; max-width: 700px; width: 100%; font-size: 18px;">
+        <form action="../Public/enviarAdmiContacto.php" method="POST" class="p-4 rounded-md shadow-lg" style="background-color: #ffffff; border-radius: 15px; max-width: 700px; width: 100%; font-size: 18px; transition: transform 0.3s; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
             <!-- Título del formulario -->
-            <h2 class="text-center mb-5" style="color: #000000; font-family: 'Bernard MT Condensed'; font-size: 40px; font-weight: bold;">CONTÁCTENOS</h2>
+            <h2 class="text-center mb-4" style="color: #333; font-family: 'Arial', sans-serif; font-size: 36px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">CONTÁCTENOS</h2>
 
-        
             <!-- Contenedor de nombre y email en una sola fila -->
             <div class="row">
                 <!-- Nombre -->
                 <div class="col-md-6 mb-3">
                     <label for="nombre" class="block text-sm font-medium" style="color: #333;">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" required style="border: 1px solid #333; color: #333; width: 100%; height: 42px; padding: 8px;">
+                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" required style="border: 1px solid #ccc; color: #333; width: 100%; height: 42px; padding: 8px; border-radius: 8px; transition: border-color 0.3s;" onfocus="this.style.borderColor='#28a745';">
                 </div>
 
                 <!-- Email -->
                 <div class="col-md-6 mb-3">
                     <label for="email" class="block text-sm font-medium" style="color: #333;">Email</label>
-                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required style="border: 1px solid #333; color: #333; width: 100%; height: 42px; padding: 8px;">
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required style="border: 1px solid #ccc; color: #333; width: 100%; height: 42px; padding: 8px; border-radius: 8px; transition: border-color 0.3s;" onfocus="this.style.borderColor='#28a745';">
                 </div>
             </div>
 
             <!-- Motivo -->
             <div class="mt-4 mb-3">
                 <label for="motivo" class="block text-sm font-medium" style="color: #333;">Motivo</label>
-                <input type="text" id="motivo" name="motivo" class="form-control" placeholder="Motivo" required style="border: 1px solid #333; color: #333; width: 100%; height: 42px; padding: 8px;">
+                <input type="text" id="motivo" name="motivo" class="form-control" placeholder="Motivo" required style="border: 1px solid #ccc; color: #333; width: 100%; height: 42px; padding: 8px; border-radius: 8px; transition: border-color 0.3s;" onfocus="this.style.borderColor='#28a745';">
             </div>
 
             <!-- Comentario -->
             <div class="mt-4 mb-3">
                 <label for="comentario" class="block text-sm font-medium" style="color: #333;">Comentario</label>
-                <textarea id="comentario" name="comentario" rows="5" class="form-control" placeholder="Escribe tu comentario" required style="border: 1px solid #333; color: #333; width: 100%; padding: 10px;"></textarea>
+                <textarea id="comentario" name="comentario" rows="5" class="form-control" placeholder="Escribe tu comentario" required style="border: 1px solid #ccc; color: #333; width: 100%; padding: 10px; border-radius: 8px; transition: border-color 0.3s;" onfocus="this.style.borderColor='#28a745';"></textarea>
             </div>
 
             <!-- Botón Enviar -->
             <div class="mt-4 text-right">
-                <button type="submit" class="btn btn-success font-bold py-2 px-4 rounded" style="background-color: #28a745; border: 2px solid #333; color: #fff; font-size: 18px; padding: 10px 20px; transition: background-color 0.3s;">
-                    Enviar
-                </button>
+                <button type="submit" class="btn btn-success font-bold py-2 px-4 rounded" style="background-color: #28a745; border: none; color: #fff; font-size: 18px; padding: 10px 20px; border-radius: 8px; transition: background-color 0.3s, transform 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">Enviar</button>
             </div>
         </form>
     </div>
 </div>
+
 
  
 <!--Brands-->

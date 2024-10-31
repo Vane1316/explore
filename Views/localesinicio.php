@@ -2,8 +2,7 @@
 require_once __DIR__.'/../Models/Database.php';
 require_once __DIR__.'/../Models/LocalModel.php';
 require_once __DIR__.'/../Controller/LocalController.php';
-require_once __DIR__.'/../Models/categoriaModelo.php';
-require_once __DIR__.'/../Controller/CategoriaController.php';
+
 
 // Crear una instancia del controlador
 $controller = new LocalController();
@@ -52,23 +51,23 @@ $locales = $controller->getLocalesWithDetails();
             <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav"> <!-- Navegación colapsable -->
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="../public/Views/inicio.php">Inicio</a> <!-- Enlace a la página de inicio -->
+                    <li class="nav-item">
+                            <a class="nav-link " href="../Public/inicio.php">INICIO</a> <!-- Enlace a la página de inicio -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/localesinicio.php">Locales</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link " href="../Views/localesinicio.php">LOCALES</a> <!-- Enlace a la página de locales -->
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Views/contact.php">Contactos</a> <!-- Enlace a la página de contactos -->
-                        </li>
+                     <!--   <li class="nav-item">
+                            <a class="nav-link" href="../Views/contact.php">Contactos</a> (Enlace a la página de contactos)
+                        </li> 
+                    -->
                         <!-- Links para login y registro -->
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary text-white" href="../Views/inicio_sesion.php">Login</a> <!-- Enlace a la página de login -->
+                            <a class="nav-link " href="../Views/inicio_sesion.php">LOGIN</a> <!-- Enlace a la página de login -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary text-white" href="../Views/registro.php">Register</a> <!-- Enlace a la página de registro -->
+                            <a class="nav-link " href="../Views/registro.php">REGISTER</a> <!-- Enlace a la página de registro -->
                         </li>
-
                     </ul>
                 </div>
             </div>
@@ -79,33 +78,122 @@ $locales = $controller->getLocalesWithDetails();
 
    
 
-    <!-- Contenido -->
-    <div class="container py-5">
-    <h1 class="h2 pb-4">Locales Registrados</h1>
+<!-- Contenido -->
+<div class="container py-5">
+    <h1 class="h2 pb-4 text-center text-primary animated-title">Descubre Nuestros Locales</h1>
     <div class="row">
         <?php foreach ($locales as $local): ?>
         <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 shadow-sm">
-                <img src="<?php echo htmlspecialchars($local['imagen_principal']); ?>" class="card-img-top" alt="Imagen del Local" style="height: 200px; object-fit: cover;">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo htmlspecialchars($local['nombre_empresa']); ?></h5>
-                    <p class="card-text">
-                        <strong>Dirección:</strong> <?php echo htmlspecialchars($local['direccion']); ?><br>
-                        <strong>Teléfono:</strong> <?php echo htmlspecialchars($local['telefono']); ?>
-                    </p>
+            <div class="card h-100 shadow-lg hover-card">
+                <div class="position-relative overflow-hidden">
+                    <img src="<?php echo htmlspecialchars($local['imagen_principal']); ?>" class="card-img-top" alt="Imagen de <?php echo htmlspecialchars($local['nombre_empresa']); ?>" style="height: 250px; object-fit: cover;">
+                    <div class="overlay-gradient"></div>
+                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                        <h5 class="card-title text-white mb-0"><?php echo htmlspecialchars($local['nombre_empresa']); ?></h5>
+                       
+                    </div>
                 </div>
-                <div class="card-footer text-center">
-                <form action="../views/localinicio.php" method="post">
-                    <input type="hidden" name="id_local" value="<?php echo $local['id_local']; ?>">
-                    <button type="submit">Ver Detalles</button>
-                </form>
-                </div> 
+                <div class="card-body">
+                    <p class="card-text">
+                        <i class="fas fa-map-marker-alt text-danger mr-2"></i><?php echo htmlspecialchars($local['direccion']); ?><br>
+                        <i class="fas fa-phone text-success mr-2"></i><?php echo htmlspecialchars($local['telefono']); ?>
+                    </p>
+                    <p class="card-text"><small class="text-muted">Abierto ahora: 9:00 AM - 9:00 PM</small></p>
+                </div>
+                <div class="card-footer bg-transparent border-0 text-center">
+        <form action="../views/localinicio.php" method="post">
+            <input type="hidden" name="id_local" value="<?php echo $local['id_local']; ?>">
+            <button type="submit" class="btn btn-primary btn-sm rounded-pill">
+                <i class="fas fa-info-circle mr-2"></i>Ver Detalles
+            </button>
+        </form>
+</div> 
             </div>
         </div>
         <?php endforeach; ?>
     </div>
 </div>
 <!-- Fin de contenido -->
+
+<style>
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animated-title {
+        animation: fadeInUp 1s ease-out;
+        font-size: 2.5rem;
+        color: #4a4a4a;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .hover-card {
+        transition: all 0.3s ease-in-out;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .hover-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
+    }
+
+    .overlay-gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0 .5) 100%);
+    }
+
+    .card-img-overlay {
+        background-color: rgba(0,0,0,0.5);
+        padding: 20px;
+    }
+
+    .animated-button {
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+    /* Elimina esta regla si existe */
+    /* .animated-button {
+        animation: pulse 2s infinite;
+    } */
+
+</style>
+
 <!--Brands-->
 <section class="bg-light py-5"> <!-- Sección que muestra las marcas con fondo claro y espaciado vertical -->
     <div class="container my-4"> <!-- Contenedor principal con márgenes verticales -->

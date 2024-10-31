@@ -12,6 +12,12 @@ class LocalController {
     // Método para registrar un nuevo local
     public function registerLocal($nombre_empresa, $nit, $direccion, $telefono, $descripcion, $servicios, $mapa, $nombre_categoria, $img, $horario_apertura, $horario_cierre) {
         if ($nombre_empresa && $nit && $direccion && $telefono && $descripcion && $servicios && $nombre_categoria && $horario_apertura && $horario_cierre) {
+            // Verificar si el local ya está registrado
+            if ($this->localModel->getLocalByNameAndNit($nombre_empresa, $nit)) {
+                echo "Empresa registrada.";
+                return false;
+            }
+
             // Intentar crear el local
             $localCreado = $this->localModel->createLocal($nombre_empresa, $nit, $direccion, $telefono, $descripcion, $servicios, $mapa, $nombre_categoria, $img, $horario_apertura, $horario_cierre);
             
@@ -37,6 +43,11 @@ class LocalController {
     // Método para obtener los detalles de un local específico por ID
     public function getLocalDetails($id_local) {
         return $this->localModel->getLocalById($id_local);
+    }
+
+    // Método para obtener todas las imágenes de un local específico
+    public function getImagesByLocalId($id_local) {
+        return $this->localModel->getImagesByLocalId($id_local);
     }
 }
 ?>

@@ -15,7 +15,7 @@ class LocalModel {
         try {
             // Consulta SQL para insertar datos en la tabla 'locales'
             $sql = "INSERT INTO locales (nombre_empresa, nit, direccion, 
-            telefono, descripcion, servicios, url, horario_apertura, horario_cierre) VALUES 
+            telefono, descripcion, servicios, mapa, horario_apertura, horario_cierre) VALUES 
             (:nombre_empresa, :nit, :direccion, :telefono, :descripcion, :servicios, 
             :mapa, :horario_apertura, :horario_cierre)";
             
@@ -147,5 +147,29 @@ class LocalModel {
             return [];
         }
     }
+      // Nuevo método para obtener locales por categoría
+      public function getLocalesByCategory($categoria_id) {
+        
+    
+        $sql = "SELECT l.id_local, l.nombre_empresa, l.direccion, l.telefono, c.nombre_categoria, 
+                               i.img AS imagen_principal 
+                        FROM locales l 
+                        LEFT JOIN categorias c ON l.categoria_id = c.categoria_id 
+                        LEFT JOIN imagenes i ON l.id_local = i.local_id 
+                        WHERE l.categoria_id = :categoria_id 
+                        GROUP BY l.id_local";
+                
+                
+                
+        $stmt = $this->db->prepare($sql);
+                $stmt->bindParam(':categoria_id', $categoria_id, PDO::PARAM_INT);
+                
+            
+        $stmt->execute();
+                
+              
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            }
+
 }
 ?>

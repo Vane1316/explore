@@ -22,7 +22,7 @@
                     session_start();
                     ?>
     
-    <!-- Header -->
+ 
  
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-light shadow"> <!-- Barra de navegación -->
@@ -42,19 +42,19 @@
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
                     
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/admin.php">Inicio Administrador</a> <!-- Enlace a la página de usuario -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/admin.php">INICIO ADMINISTRADOR</a> <!-- Enlace a la página de usuario -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/localadmi.php">Locales</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/localadmi.php">LOCALES</a> <!-- Enlace a la página de locales -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/about.php">Planes</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/about.php">PLANES</a> <!-- Enlace a la página de locales -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/contactadmi.php">Contactos</a> <!-- Enlace a la página de contactos -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/contactadmi.php">CONTACTOS</a> <!-- Enlace a la página de contactos -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/subidanegocio.php">Subir Negocio</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/subidanegocio.php">SUBIR NEGOCIO</a> <!-- Enlace a la página de locales -->
                         </li>
                      
                         
@@ -71,25 +71,7 @@
     </nav>
     <!-- Cerrar Header -->
 
-             <!-- Condicional de autenticación -->
-                        <?php
-                        if (isset($_SESSION['username'])) {
-                            // Usuario está autenticado
-                            echo '
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <div class="user-icon" style="background-image: url(\'path_to_user_image\');"></div>
-                                    ' . htmlspecialchars($_SESSION['username']) . '
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                         <li><a class="dropdown-item" href="../views/subidanegocio.php">Agregar Negocio</a></li>
-                                    <li><a class="dropdown-item" href="../public/logout_action.php">Cerrar sesión</a></li>
-                                </ul>
-                            </li>
-                            ';
-                        } 
-                        
-                        ?>
+
 
     <!-- Cerrar Header -->
     <!-- Modal -->
@@ -114,23 +96,23 @@
     </div>
     <!-- Close Modal -->
 
-    <!-- Contenido-->
-    <div class="container py-5">
+<!-- Contenido -->
+<div class="container py-5">
     <h1 class="h2 pb-4 text-center">Elige tu Plan para Publicitar tu Negocio</h1>
     
     <form action="procesar_pago.php" method="post">
         <div class="row justify-content-center">
-            <!-- Plan Barato -->
+            <!-- Plan Básico -->
             <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100 shadow-sm">
+                <div class="card h-100 shadow transition-card">
                     <div class="card-body text-center">
                         <h5 class="card-title">Plan Básico</h5>
                         <p class="card-text">Ideal para pequeños negocios que quieren comenzar a publicitar.</p>
                         <h2 class="text-success">$10 USD</h2>
                         <ul class="list-unstyled mt-3 mb-4">
-                            <li>Publicación por 1 mes</li>
-                            <li>1 imagen destacada</li>
-                            <li>Ubicación en el mapa</li>
+                            <li><i class="fas fa-check-circle"></i> Publicación por 1 mes</li>
+                            <li><i class="fas fa-check-circle"></i> 1 imagen destacada</li>
+                            <li><i class="fas fa-check-circle"></i> Ubicación en el mapa</li>
                         </ul>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="plan" id="plan_basico" value="basico" required>
@@ -140,18 +122,18 @@
                 </div>
             </div>
             
-            <!-- Plan Intermedio -->
+            <!-- Plan Avanzado -->
             <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100 shadow-sm border-primary">
+                <div class="card h-100 shadow border-primary transition-card">
                     <div class="card-body text-center">
                         <h5 class="card-title">Plan Avanzado</h5>
                         <p class="card-text">Perfecto para negocios medianos que desean más visibilidad.</p>
                         <h2 class="text-primary">$30 USD</h2>
                         <ul class="list-unstyled mt-3 mb-4">
-                            <li>Publicación por 3 meses</li>
-                            <li>3 imágenes destacadas</li>
-                            <li>Ubicación en el mapa</li>
-                            <li>Destacado en las búsquedas</li>
+                            <li><i class="fas fa-check-circle"></i> Publicación por 3 meses</li>
+                            <li><i class="fas fa-check-circle"></i> 3 imágenes destacadas</li>
+                            <li><i class="fas fa-check-circle"></i> Ubicación en el mapa</li>
+                            <li><i class="fas fa-check-circle"></i> Destacado en las búsquedas</li>
                         </ul>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="plan" id="plan_avanzado" value="avanzado">
@@ -163,32 +145,72 @@
             
             <!-- Plan Premium -->
             <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100 shadow-sm border-danger">
+                <div class="card h-100 shadow border-danger transition-card">
                     <div class="card-body text-center">
                         <h5 class="card-title">Plan Premium</h5>
                         <p class="card-text">Para grandes negocios que quieren máxima visibilidad y ventajas.</p>
                         <h2 class="text-danger">$50 USD</h2>
                         <ul class="list-unstyled mt-3 mb-4">
-                            <li>Publicación por 6 meses</li>
-                            <li>6 imágenes destacadas</li>
-                            <li>Ubicación en el mapa</li>
-                            <li>Destacado en la página principal</li>
-                            <li>Publicidad en redes sociales</li>
+                            <li><i class="fas fa-check-circle"></i> Publicación por 6 meses</li>
+                            <li><i class="fas fa-check-circle"></i> 6 imágenes destacadas</li>
+                            <li><i class="fas fa-check-circle"></i> Ubicación en el mapa</li>
+                            <li><i class="fas fa-check-circle"></i> Destacado en la página principal</li>
+                            <li><i class="fas fa-check-circle"></i> Publicidad en redes sociales</li>
                         </ul>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="plan" id="plan_premium" value="premium">
-                            <label class="form-check-label" for="plan_premium">Seleccionar</label>
+                            <label class=" form-check-label" for="plan_premium">Seleccionar</label>
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
+    </form>
+</div>
+<div class="text-center">
+<a href="../Views/Pagar.php" class="btn btn-primary btn-lg">Continuar al Pago</a>
 
-        <div class="text-center">
-    <a href="../Views/Pagar.php" class="btn btn-primary btn-lg">Continuar al Pago</a>
-</div>
-</div>
- <!-- Fin Contenido -->
+<!-- Estilos adicionales -->
+<style>
+    .transition-card {
+        transition: all 0.3s ease-in-out;
+    }
+    .transition-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .card-body {
+        padding: 2rem;
+    }
+    .card-title {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    .card-text {
+        font-size: 1rem;
+        color: #666;
+    }
+    .list-unstyled {
+        padding-left: 0;
+        list-style: none;
+    }
+    .list-unstyled li {
+        padding-bottom: 0.5rem;
+    }
+    .list-unstyled li i {
+        margin-right: 0.5rem;
+    }
+    .form-check {
+        padding-top: 1rem;
+    }
+    .form-check-input {
+        margin-top: 0.2rem;
+    }
+    .form-check-label {
+        font-size: 1rem;
+    }
+</style>
   
 <!--Brands-->
 <section class="bg-light py-5"> <!-- Sección que muestra las marcas con fondo claro y espaciado vertical -->

@@ -45,24 +45,19 @@
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
                     
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/admin.php">usuario</a> <!-- Enlace a la página de usuario -->
+                            <a class="nav-link" href="../Views/admin.php">Inicio Administrador</a> <!-- Enlace a la página de usuario -->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../Views/localadmi.php">Locales</a> <!-- Enlace a la página de locales -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/about.php">planes</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link" href="../Views/about.php">Planes</a> <!-- Enlace a la página de locales -->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../Views/contactadmi.php">Contactos</a> <!-- Enlace a la página de contactos -->
                         </li>
                      
-                        <!-- Corazón (favoritos) agregado después de "Register" -->
-                        <li class="nav-item">
-                            <a href="favoritos.php" class="nav-link" id="heart-link">
-                                <i class="fa fa-heart heart-icon"></i> <!-- Icono de corazón para favoritos -->
-                            </a>
-                        </li>
+                        
                     </ul>
                 </div>
             </div>
@@ -95,75 +90,83 @@
     </div>
 <!-- Cerrar Header -->
 
-    <!-- Contenido -->
-    <div class="container py-5">
-    <h1 class="h2 pb-4 text-center">Información de Pago</h1>
-    <form action="../Public/procesar_pago.php" method="post">
-        <div class="row g-3">
-            <!-- Información del Usuario -->
-            <div class="col-md-6">
-                <label for="nombre" class="form-label">Nombre Completo</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" required>
-            </div>
-            <div class="col-md-6">
-                <label for="email" class="form-label">Correo Electrónico</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            
-            <!-- Dirección de Facturación -->
-            <div class="col-12">
-                <label for="direccion" class="form-label">Dirección de Facturación</label>
-                <input type="text" class="form-control" id="direccion" name="direccion" required>
-            </div>
-            <div class="col-md-6">
-                <label for="ciudad" class="form-label">Ciudad</label>
-                <input type="text" class="form-control" id="ciudad" name="ciudad" required>
-            </div>
-            <div class="col-md-6">
-                <label for="codigo_postal" class="form-label">Código Postal</label>
-                <input type="text" class="form-control" id="codigo_postal" name="codigo_postal" required>
-            </div>
-            
-            <!-- Información de la Tarjeta de Crédito -->
-            <div class="col-md-6">
-                <label for="numero_tarjeta" class="form-label">Número de Tarjeta</label>
-                <input type="text" class="form-control" id="numero_tarjeta" name="numero_tarjeta" required minlength="16" maxlength="16">
-            </div>
-            <div class="col-md-3">
-                <label for="mes_expiracion" class="form-label">Mes de Expiración</label>
-                <input type="text" class="form-control" id="mes_expiracion" name="mes_expiracion" required minlength="2" maxlength="2">
-            </div>
-            <div class="col-md-3">
-                <label for="anio_expiracion" class="form-label">Año de Expiración</label>
-                <input type="text" class="form-control" id="anio_expiracion" name="anio_expiracion" required minlength="4" maxlength="4">
-            </div>
-            <div class="col-md-3">
-                <label for="cvv" class="form-label">CVV</label>
-                <input type="text" class="form-control" id="cvv" name="cvv" required minlength="3" maxlength="4">
-            </div>
+<!-- Contenido -->
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="h2 pb-4 text-center">Información de Pago</h1>
+            <form action="../Public/procesar_pago.php" method="post">
+                <div class="row g-3">
+                    <!-- Información del Usuario -->
+                    <div class="col-md-6">
+                        <label for="nombre" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    
+                    <!-- Dirección de Facturación -->
+                    <div class="col-12">
+                        <label for="direccion" class="form-label">Dirección de Facturación</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="ciudad" class="form-label">Ciudad</label>
+                        <input type="text" class="form-control" id="ciudad" name="ciudad" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="codigo_postal" class="form-label">Código Postal</label>
+                        <input type="text" class="form-control" id="codigo_postal" name="codigo_postal" required pattern="\d{5}">
+                    </div>
+                    
+                    <!-- Información de la Tarjeta de Crédito -->
+                    <div class="col-md-6">
+                        <label for="numero_tarjeta" class="form-label">Número de Tarjeta</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
+                            <input type="text" class="form-control" id="numero_tarjeta" name="numero_tarjeta" required minlength="16" maxlength="16">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="mes_expiracion" class="form-label">Mes de Expiración</label>
+                        <input type="text" class="form-control" id="mes_expiracion" name="mes_expiracion" required minlength="2" maxlength="2" pattern="(0[1-9]|1[0-2])">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="anio_expiracion" class="form-label">Año de Expiración</label>
+                        <input type="text" class="form-control" id="anio_expiracion" name="anio_expiracion" required minlength="4" maxlength="4" pattern="\d{4}">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="cvv" class="form-label">CVV</label>
+                        <input type="text" class="form-control" id="cvv" name="cvv" required minlength="3" maxlength="4" pattern="\d{3,4}">
+                    </div>
 
-            <!-- Selección del Plan -->
-            <div class="col-12">
-                <label for="plan" class="form-label">Selecciona un Plan</label>
-                <select class="form-select" id="plan" name="plan" required>
-                    <option value="basico">Plan Básico - $10 USD</option>
-                    <option value="avanzado">Plan Avanzado - $30 USD</option>
-                    <option value="premium">Plan Premium - $50 USD</option>
-                </select>
-            </div>
+                    <!-- Selección del Plan -->
+                    <div class="col-12">
+                        <label for="plan" class="form-label">Selecciona un Plan</label>
+                        <select class="form-select" id="plan" name="plan" required>
+                            <option value="" disabled selected>Elige un plan</option>
+                            <option value="basico">Plan Básico - $10 USD</option>
+                            <option value="avanzado">Plan Avanzado - $30 USD</option>
+                            <option value="premium">Plan Premium - $50 USD</option>
+                        </select>
+                    </div>
 
-            
-            <!-- Botón de Enviar -->
-            <div class="col-12 text-center">
-                <button type="submit" class="btn btn-primary btn-lg">Procesar Pago</button>
-            </div>
+                            <!-- Botón de Enviar -->
+        <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary btn-lg">Procesar Pago</button>
         </div>
-    </form>
+    </div>
+</form>
+                   
+        </div>
+    </div>
 </div>
-
 
 <!-- Fin de contenido -->
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!--Brands-->
     <section class="bg-light py-5"> <!-- Sección que muestra las marcas con fondo claro y espaciado vertical -->
     <div class="container my-4"> <!-- Contenedor principal con márgenes verticales -->

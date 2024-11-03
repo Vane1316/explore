@@ -238,9 +238,9 @@
                     </select>
                 </div>
 
-                <button type="submit" class="btn-submit animate__animated animate__bounceIn animate__delay-3s">Registrarse</button>
+                <button type="submit " class="btn-submit animate__animated animate__bounceIn animate__delay-3s  font-bold">Registrarse</button>
             </form>
-            <p class="footer-text animate__animated animate__fadeIn animate__delay-3s">¿Ya tienes una cuenta? <a href="../Views/inicio_sesion.php">Iniciar Sesión</a></p>
+            <p class="footer-text animate__animated animate__fadeIn animate__delay-3s  font-bold">¿Ya tienes una cuenta? <a href="../Views/inicio_sesion.php">Iniciar Sesión</a></p>
         </div>
     </div>
 

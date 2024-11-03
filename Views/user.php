@@ -45,13 +45,13 @@
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/user.php">Inicio Usuario</a> <!-- Enlace a la página de usuario -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/user.php">Inicio Usuario</a> <!-- Enlace a la página de usuario -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/localesUser.php">Locales</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/localesUser.php">Locales</a> <!-- Enlace a la página de locales -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/contactuser.php">Contactos</a> <!-- Enlace a la página de contactos -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/contactuser.php">Contactos</a> <!-- Enlace a la página de contactos -->
                         </li>
                      
                        
@@ -83,6 +83,7 @@
 
 
   
+
 <!-- Iniciar Banner Principal -->
 <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
     <!-- Indicadores del carrusel -->
@@ -99,7 +100,7 @@
                 <div class="row p-5 align-items-center">
                     <div class="col-lg-6 mb-0 d-flex align-items-center">
                         <div class="text-align-left align-self-center animated fadeInLeft">
-                            <h1 class="h1 text-success"><b>Petronio Cocina De Autor</b></h1>
+                            <h1 class="nav-link font-bold" style="font-family: 'Algerian'; font-size: 50px; color: #4CAF50; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"><b>Petronio Cocina De Autor</b></h1>
                             <p class="animate__animated animate__fadeIn animate__delay-1s">
                                 En Petronio - Cocina de autor, cada plato es una obra maestra inspirada en Colombia. Fusionamos tradición y modernidad para crear experiencias culinarias únicas.
                             </p>
@@ -119,7 +120,7 @@
                 <div class="row p-5 align-items-center">
                     <div class="col-lg-6 mb-0 d-flex align-items-center">
                         <div class="text-align-left animated fadeInLeft">
-                            <h1 class="h1 text-primary"><b>Hotel Lancaster House</b></h1>
+                            <h1 class="nav-link font-bold" style="font-family: 'algerian'; font-size: 50px; color: blue;text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"><b>Hotel Lancaster House</b></h1>
                             <p class="animate__animated animate__fadeIn animate__delay-1s">
                                 Experimenta el lujo y la comodidad en el corazón de Bogotá. Con habitaciones elegantes y servicios de primera clase, Lancaster House es tu hogar lejos de casa.
                             </p>
@@ -139,11 +140,9 @@
                 <div class="row p-5 align-items-center">
                     <div class="col-lg-6 mb-0 d-flex align-items-center">
                         <div class="text-align-left animated fadeInLeft">
-                            <h1 class="h1 text-warning"><b>Plaza de Mercado Paloquemao</b></h1>
+                            <h1 class="nav-link font-bold" style="font-family: 'algerian'; font-size: 50px; color: black;text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"><b>Plaza de Mercado Paloquemao</b></h1>
                             <p class ="animate__animated animate__fadeIn animate__delay-1s">
-                                Descubre la riqueza gastronómica de Colombia en la Plaza de Mercado Paloquemao. Un lugar emblemático para disfrutar de la comida y la cultura colombiana.
-                            </p>
-                            
+                                Descubre la riqueza gastronómica de Colombia en la Plaza de Mercado Paloquemao. Un lugar emblemático para disfrutar de la comida y la cultura colombiana. </p>
                         </div>
                     </div>
                     <div class="col-lg-6 animated fadeInRight">
@@ -170,14 +169,14 @@
     <div class="container py-5">
         <div class="row text-center py-3">
             <div class="col-lg-6 m-auto">
-                <h1 class="h1">Destacados de la Semana</h1>
+                <h1 class="nav-link font-bold" style="font-family: 'algerian'; font-size: 70px; color: black;">Destacados de la Semana</h1>
                 <p>Negocios Imperdibles En Villeta</p>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-4 mb-4">
                 <div class="card h-100">
-                    <a href="shop-single.html">
+                    <a href="">
                         <img src="../Public/img/estelar3.jpg" class="card-img-top" alt="...">
                     </a>
                     <div class="card-body">
@@ -185,7 +184,7 @@
 
                             
                         </ul>
-                        <a href="shop-single.html" class="h2 text-decoration-none text-dark">Estelar Suites Jones</a>
+                        <a href="" class=" h2 nav-link font-bold" style="font-family: 'Elephant'; font-size: 12%; color: black;">Estelar Suites Jones</a>
                         <p class="card-text">
                         El Hotel está ubicado en Chapinero Alto barrio de fácil acceso gracias a sus corredores viales como lo son la Carrera Séptima, Avenida 39, la carrera 5ta y la avenida circunvalar, los cuales reducen los tiempos de recorrido entre el sur , centro histórico y norte de la ciudad. Su estratégica ubicación a pocas cuadras del eje financiero de la ciudad, lo hace el Hotel ideal para el desarrollo de sus negocios, eventos y reuniones en Bogotá.
                         </p>
@@ -194,14 +193,14 @@
             </div>
             <div class="col-12 col-md-4 mb-4">
                 <div class="card h-100">
-                    <a href="shop-single.html">
+                    <a href="">
                         <img src="../Public/img/hilton1.jpg" class="card-img-top" alt="...">
                     </a>
                     <div class="card-body">
                         <ul class="list-unstyled d-flex justify-content-between">
                             
                         </ul>
-                        <a href="shop-single.html" class="h2 text-decoration-none text-dark">Hilton Garden Inn Bogota Airport</a>
+                        <a href="" class="h2 nav-link font-bold" style="font-family: 'Elephant'; font-size: 12%; color: black;">Hilton Garden Inn Bogota Airport</a>
                         <p class="card-text">
                         Hilton Garden Inn Bogota Airport es una magnífica elección para los viajeros que visiten Bogotá, ya que ofrece un ambiente con encanto y numerosos servicios diseñados para mejorar tu estancia. Ubicado cerca de la mayoría de los puntos de referencia de Bogotá, como BotaniK (0,9 km) y la Catedral de Fontibón (2,9 km), es un fantástico destino para turistas.
                         </p>
@@ -211,7 +210,7 @@
             </div>
             <div class="col-12 col-md-4 mb-4">
                 <div class="card h-100">
-                    <a href="shop-single.html">
+                    <a href="">
                         <img src="../Public/img/mercaboy3.png" class="card-img-top" alt="...">
                     </a>
                     <div class="card-body">
@@ -219,7 +218,7 @@
                             
                            
                         </ul>
-                        <a href="shop-single.html" class="h2 text-decoration-none text-dark">Mercaboy Mercados y Droguería</a>
+                        <a href="" class=" h2 nav-link font-bold" style="font-family: 'Elephant'; font-size: 12%; color: black;">Mercaboy Mercados y Droguería</a>
                         <p class="card-text">
                         Mercaboy Mercados y Droguería es un establecimiento que combina servicios de supermercado y farmacia, ofreciendo a sus clientes una amplia variedad de productos en un solo lugar. En la sección de mercados, los usuarios pueden encontrar alimentos frescos, productos de despensa, lácteos, carnes, frutas y verduras, así como artículos de limpieza y cuidado personal. En la droguería, Mercaboy ofrece medicamentos de venta libre, productos farmacéuticos, suplementos y artículos para la salud y el bienestar.
                         </p>
@@ -236,7 +235,7 @@
     <div class="container py-5">
         <div class="row text-center py-3">
             <div class="col-lg-6 m-auto">
-                <h1 class="h1">Lo que nuestros clientes dicen</h1>
+                <h1 class="h1 nav-link font-bold" style="font-family: 'algerian'; font-size: 70px; color: black;">Lo que nuestros clientes dicen</h1>
                 <p>Experiencias reales de nuestros clientes</p>
             </div>
         </div>
@@ -275,12 +274,12 @@
     </div>
 </section>
 
-<!--Brands-->
+<!--Brands--><!--Brands-->
 <section class="bg-light py-5"> <!-- Sección que muestra las marcas con fondo claro y espaciado vertical -->
     <div class="container my-4"> <!-- Contenedor principal con márgenes verticales -->
         <div class="row text-center py-3"> <!-- Fila para alinear el contenido en el centro y espaciado vertical -->
             <div class="col-lg-6 m-auto"> <!-- Columna centrada para el título y descripción -->
-                <h1 class="h1">Marcas</h1> <!-- Título de la sección -->
+                <h1 class="h1 nav-link font-bold" style="font-family: 'algerian'; font-size: 70px; color: black;">Marcas</h1> <!-- Título de la sección -->
                 <p>
                     Marcas reconocidas del mercado <!-- Descripción de la sección -->
                 </p>

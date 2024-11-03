@@ -90,56 +90,59 @@
     </div>
 <!-- Cerrar Header -->
 
-<!-- Contenido -->
 <div class="container py-5">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <h1 class="h2 pb-4 text-center">Información de Pago</h1>
+        <div class="col-md-8 border border-blue-500 rounded-lg p-4 shadow-lg" style="border-radius: 3px;"> <!-- Borde exterior con sombra 3D y radio -->
+            <h1 class="h2 nav-link font-bold text-center" style="font-family: 'Castellar'; font-size: 50px; color: #4CAF50; text-shadow: 1px 1px 0px #000;">Información de Pago</h1>
             <form action="../Public/procesar_pago.php" method="post">
                 <div class="row g-3">
                     <!-- Información del Usuario -->
-                    <div class="col-md-6">
-                        <label for="nombre" class="form-label">Nombre Completo</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="email" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                    
-                    <!-- Dirección de Facturación -->
-                    <div class="col-12">
-                        <label for="direccion" class="form-label">Dirección de Facturación</label>
-                        <input type="text" class="form-control" id="direccion" name="direccion" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="ciudad" class="form-label">Ciudad</label>
-                        <input type="text" class="form-control" id="ciudad" name="ciudad" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="codigo_postal" class="form-label">Código Postal</label>
-                        <input type="text" class="form-control" id="codigo_postal" name="codigo_postal" required pattern="\d{5}">
-                    </div>
-                    
-                    <!-- Información de la Tarjeta de Crédito -->
-                    <div class="col-md-6">
-                        <label for="numero_tarjeta" class="form-label">Número de Tarjeta</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
-                            <input type="text" class="form-control" id="numero_tarjeta" name="numero_tarjeta" required minlength="16" maxlength="16">
+                    <div class="col-12 border border-gray-300 rounded-lg p-4 my-2"> <!-- Borde interior -->
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label">Nombre Completo</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+
+                            <!-- Dirección de Facturación -->
+                            <div class="col-12">
+                                <label for="direccion" class="form-label">Dirección de Facturación</label>
+                                <input type="text" class="form-control" id="direccion" name="direccion" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="ciudad" class="form-label">Ciudad</label>
+                                <input type="text" class="form-control" id="ciudad" name="ciudad" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="codigo_postal" class="form-label">Código Postal</label>
+                                <input type="text" class="form-control" id="codigo_postal" name="codigo_postal" required pattern="\d{5}">
+                            </div>
+
+                            <!-- Información de la Tarjeta de Crédito -->
+                            <div class="col-md-6">
+                                <label for="numero_tarjeta" class="form-label">Número de Tarjeta</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
+                                    <input type="text" class="form-control" id="numero_tarjeta" name="numero_tarjeta" required minlength="16" maxlength="16">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="mes_expiracion" class="form-label">Mes de Expiración</label>
+                                <input type="text" class="form-control" id="mes_expiracion" name="mes_expiracion" required minlength="2" maxlength="2" pattern="(0[1-9]|1[0-2])">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="anio_expiracion" class="form-label">Año de Expiración</label>
+                                <input type="text" class="form-control" id="anio_expiracion" name="anio_expiracion" required minlength="4" maxlength="4" pattern="\d{4}">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="cvv" class="form-label">CVV</label>
+                                <input type="text" class="form-control" id="cvv" name="cvv" required minlength="3" maxlength="4" pattern="\d{3,4}">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="mes_expiracion" class="form-label">Mes de Expiración</label>
-                        <input type="text" class="form-control" id="mes_expiracion" name="mes_expiracion" required minlength="2" maxlength="2" pattern="(0[1-9]|1[0-2])">
-                    </div>
-                    <div class="col-md-3">
-                        <label for="anio_expiracion" class="form-label">Año de Expiración</label>
-                        <input type="text" class="form-control" id="anio_expiracion" name="anio_expiracion" required minlength="4" maxlength="4" pattern="\d{4}">
-                    </div>
-                    <div class="col-md-3">
-                        <label for="cvv" class="form-label">CVV</label>
-                        <input type="text" class="form-control" id="cvv" name="cvv" required minlength="3" maxlength="4" pattern="\d{3,4}">
                     </div>
 
                     <!-- Selección del Plan -->
@@ -153,26 +156,27 @@
                         </select>
                     </div>
 
-                            <!-- Botón de Enviar -->
-        <div class="col-12 text-center">
-            <button type="submit" class="btn btn-primary btn-lg">Procesar Pago</button>
-        </div>
-    </div>
-</form>
-                   
+                    <!-- Botón de Enviar -->
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Procesar Pago</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 
+
 <!-- Fin de contenido -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <!--Brands-->
-    <section class="bg-light py-5"> <!-- Sección que muestra las marcas con fondo claro y espaciado vertical -->
+<section class="bg-light py-5"> <!-- Sección que muestra las marcas con fondo claro y espaciado vertical -->
     <div class="container my-4"> <!-- Contenedor principal con márgenes verticales -->
         <div class="row text-center py-3"> <!-- Fila para alinear el contenido en el centro y espaciado vertical -->
             <div class="col-lg-6 m-auto"> <!-- Columna centrada para el título y descripción -->
-                <h1 class="h1">Marcas</h1> <!-- Título de la sección -->
+                <h1 class="h1 nav-link font-bold" style="font-family: 'algerian'; font-size: 70px; color: black;">Marcas</h1> <!-- Título de la sección -->
                 <p>
                     Marcas reconocidas del mercado <!-- Descripción de la sección -->
                 </p>
@@ -196,16 +200,16 @@
                                 <div class="carousel-item active"> <!-- Primera diapositiva activa -->
                                     <div class="row"> <!-- Fila para alinear las marcas -->
                                         <div class="col-3 p-md-5"> <!-- Columna para una marca -->
-                                            <a href="https://www.kfc.co/"><img class="img-fluid brand-img" src="assets/img/marca1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.kfc.co/"><img class="img-fluid brand-img" src="../public/img/marca1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.ea.com/es-es"><img class="img-fluid brand-img" src="assets/img/marca2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.ea.com/es-es"><img class="img-fluid brand-img" src="../public/img/marca2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.adidas.co/"><img class="img-fluid brand-img" src="assets/img/marca3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.adidas.co/"><img class="img-fluid brand-img" src="../public/img/marca3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.gucci.com/es/es/"><img class="img-fluid brand-img" src="assets/img/marca4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.gucci.com/es/es/"><img class="img-fluid brand-img" src="../public/img/marca4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                     </div>
                                 </div>
@@ -215,16 +219,16 @@
                                 <div class="carousel-item"> <!-- Segunda diapositiva -->
                                     <div class="row"> <!-- Fila para alinear las marcas -->
                                         <div class="col-3 p-md-5"> <!-- Columna para una marca -->
-                                            <a href="https://www.tesla.com/"><img class="img-fluid brand-img" src="assets/img/logo1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.tesla.com/"><img class="img-fluid brand-img" src="../public/img/logo1.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.apple.com/co/"><img class="img-fluid brand-img" src="assets/img/logo2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.apple.com/co/"><img class="img-fluid brand-img" src="../public/img/logo2.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.microsoft.com/es-co"><img class="img-fluid brand-img" src="assets/img/logo3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.microsoft.com/es-co"><img class="img-fluid brand-img" src="../public/img/logo3.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                         <div class="col-3 p-md-5"> <!-- Columna para otra marca -->
-                                            <a href="https://www.nike.com/es/"><img class="img-fluid brand-img" src="assets/img/logo4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
+                                            <a href="https://www.nike.com/es/"><img class="img-fluid brand-img" src="../public/img/logo4.png" alt="Brand Logo"></a> <!-- Imagen de la marca -->
                                         </div>
                                     </div>
                                 </div>
@@ -248,7 +252,6 @@
     </div>
 </section>
 <!--End Brands-->
-    
 <!-- Start Footer -->
 <footer class="bg-dark text-light py-5" id="footer"> <!-- Sección de pie de página con fondo oscuro y texto claro -->
     <div class="container"> <!-- Contenedor principal del pie de página -->

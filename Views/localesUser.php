@@ -2,8 +2,7 @@
 require_once __DIR__.'/../Models/Database.php';
 require_once __DIR__.'/../Models/LocalModel.php';
 require_once __DIR__.'/../Controller/LocalController.php';
-require_once __DIR__.'/../Models/categoriaModelo.php';
-require_once __DIR__.'/../Controller/CategoriaController.php';
+
 
 // Crear una instancia del controlador
 $controller = new LocalController();
@@ -54,13 +53,13 @@ $locales = $controller->getLocalesWithDetails();
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/user.php">Inicio Usuario</a> <!-- Enlace a la página de inicio -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/user.php">Inicio Usuario</a> <!-- Enlace a la página de inicio -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/localesUser.php">Locales</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/localesUser.php">Locales</a> <!-- Enlace a la página de locales -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/contactuser.php">Contactos</a> <!-- Enlace a la página de contactos -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/contactuser.php">Contactos</a> <!-- Enlace a la página de contactos -->
                         </li>
                      
 
@@ -92,7 +91,9 @@ $locales = $controller->getLocalesWithDetails();
  
 <!-- Contenido -->
 <div class="container py-5">
-    <h1 class="h2 pb-4 text-center text-primary animated-title">Descubre Nuestros Locales</h1>
+<h1 class="custom-title h1 nav-link text-center" style="font-family: 'Algerian'; font-size: 200px; color: black; margin: 0 auto;">Descubre Nuestros Locales</h1>
+
+    <br>
     <div class="row">
         <?php foreach ($locales as $local): ?>
         <div class="col-lg-4 col-md-6 mb-4">
@@ -156,6 +157,9 @@ $locales = $controller->getLocalesWithDetails();
         transform: translateY(-10px);
         box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
     }
+    .custom-title {
+    font-size: 70px !important; /* Agregar !important si es necesario */
+}
 
     .overlay-gradient {
         position: absolute;
@@ -211,7 +215,7 @@ $locales = $controller->getLocalesWithDetails();
     <div class="container my-4"> <!-- Contenedor principal con márgenes verticales -->
         <div class="row text-center py-3"> <!-- Fila para alinear el contenido en el centro y espaciado vertical -->
             <div class="col-lg-6 m-auto"> <!-- Columna centrada para el título y descripción -->
-                <h1 class="h1">Marcas</h1> <!-- Título de la sección -->
+                <h1 class="h1 nav-link font-bold" style="font-family: 'algerian'; font-size: 70px; color: black;">Marcas</h1> <!-- Título de la sección -->
                 <p>
                     Marcas reconocidas del mercado <!-- Descripción de la sección -->
                 </p>

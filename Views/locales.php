@@ -122,13 +122,13 @@ if ($id_local) {
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/user.php">Inicio Usuario</a> <!-- Enlace a la página de inicio -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/user.php">Inicio Usuario</a> <!-- Enlace a la página de inicio -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/localesUser.php">Locales</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/localesUser.php">Locales</a> <!-- Enlace a la página de locales -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Views/p">Contactos</a> <!-- Enlace a la página de contactos -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/p">Contactos</a> <!-- Enlace a la página de contactos -->
                         </li>
                      
 
@@ -178,7 +178,7 @@ if ($id_local) {
     <!-- Fin del Header -->
     <div class="container py-5 animate__animated animate__fadeIn">
     <?php if ($localDetails): ?>
-        <h2 class="text-center text-primary display-4 mb-4 animate__animated animate__slideInDown"><?php echo htmlspecialchars($localDetails['nombre_empresa']); ?></h2>
+        <h2 class="h1 nav-link font-bold text-center" style="font-family: 'Wide Latin'; font-size: 100px; color: black; margin: 0 auto"><?php echo htmlspecialchars($localDetails['nombre_empresa']); ?></h2>
         <div class="main-content">
             <div class="image-container animate__animated animate__zoomIn">
                 <?php if ($imagenes): ?>
@@ -366,7 +366,7 @@ if ($id_local) {
     <div class="container my-4"> <!-- Contenedor principal con márgenes verticales -->
         <div class="row text-center py-3"> <!-- Fila para alinear el contenido en el centro y espaciado vertical -->
             <div class="col-lg-6 m-auto"> <!-- Columna centrada para el título y descripción -->
-                <h1 class="h1">Marcas</h1> <!-- Título de la sección -->
+                <h1 class="h1 nav-link font-bold" style="font-family: 'algerian'; font-size: 70px; color: black;">Marcas</h1> <!-- Título de la sección -->
                 <p>
                     Marcas reconocidas del mercado <!-- Descripción de la sección -->
                 </p>

@@ -21,9 +21,6 @@
             // Inicia la sesión
                     session_start();
                     ?>
-    
- 
- 
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-light shadow"> <!-- Barra de navegación -->
         <div class="container d-flex justify-content-between align-items-center"> <!-- Contenedor flex para alinear elementos -->
@@ -98,7 +95,7 @@
 
 <!-- Contenido -->
 <div class="container py-5">
-    <h1 class="h2 pb-4 text-center">Elige tu Plan para Publicitar tu Negocio</h1>
+    <h1 class="h1 nav-link font-bold text-center" style="font-family: 'algerian'; font-size: 70px; color: #2d6a4f; text-shadow: 1px 1px 0px #000;">Elige tu Plan para Publicitar tu Negocio</h1>
     
     <form action="procesar_pago.php" method="post">
         <div class="row justify-content-center">
@@ -106,9 +103,9 @@
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100 shadow transition-card">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Plan Básico</h5>
-                        <p class="card-text">Ideal para pequeños negocios que quieren comenzar a publicitar.</p>
-                        <h2 class="text-success">$10 USD</h2>
+                        <h5 class="h2 nav-link font-bold text-center" style="font-family: 'Castellar'; font-size: 50px; color: #2d6a4f; text-shadow: 1px 1px 0px #000;">Plan Básico</h5>
+                        <p class="card-text font-bold text-black">Ideal para pequeños negocios que quieren comenzar a publicitar.</p>
+                        <h2 class="text-success">$40,000 COP</h2>
                         <ul class="list-unstyled mt-3 mb-4">
                             <li><i class="fas fa-check-circle"></i> Publicación por 1 mes</li>
                             <li><i class="fas fa-check-circle"></i> 1 imagen destacada</li>
@@ -126,9 +123,9 @@
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100 shadow border-primary transition-card">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Plan Avanzado</h5>
+                        <h5 class="h2 nav-link font-bold text-center" style="font-family: 'Castellar'; font-size: 50px; color: #2d6a4f; text-shadow: 1px 1px 0px #000;">Plan Avanzado</h5>
                         <p class="card-text">Perfecto para negocios medianos que desean más visibilidad.</p>
-                        <h2 class="text-primary">$30 USD</h2>
+                        <h2 class="text-primary">$120,000 COP</h2>
                         <ul class="list-unstyled mt-3 mb-4">
                             <li><i class="fas fa-check-circle"></i> Publicación por 3 meses</li>
                             <li><i class="fas fa-check-circle"></i> 3 imágenes destacadas</li>
@@ -147,9 +144,9 @@
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100 shadow border-danger transition-card">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Plan Premium</h5>
+                        <h5 class="h2 nav-link font-bold text-center" style="font-family: 'Castellar'; font-size: 50px; color: #2d6a4f; text-shadow: 1px 1px 0px #000;">Plan Premium</h5>
                         <p class="card-text">Para grandes negocios que quieren máxima visibilidad y ventajas.</p>
-                        <h2 class="text-danger">$50 USD</h2>
+                        <h2 class="text-danger">$200,000 COP</h2>
                         <ul class="list-unstyled mt-3 mb-4">
                             <li><i class="fas fa-check-circle"></i> Publicación por 6 meses</li>
                             <li><i class="fas fa-check-circle"></i> 6 imágenes destacadas</li>
@@ -169,7 +166,7 @@
     </form>
 </div>
 <div class="text-center">
-<a href="../Views/Pagar.php" class="btn btn-primary btn-lg">Continuar al Pago</a>
+<a href="../Views/Pagar.php" class="btn btn-primary btn-lg text-lg" style="font-size: 30px;">Continuar al Pago</a>
 
 <!-- Estilos adicionales -->
 <style>
@@ -211,13 +208,13 @@
         font-size: 1rem;
     }
 </style>
-  
+
 <!--Brands-->
 <section class="bg-light py-5"> <!-- Sección que muestra las marcas con fondo claro y espaciado vertical -->
     <div class="container my-4"> <!-- Contenedor principal con márgenes verticales -->
         <div class="row text-center py-3"> <!-- Fila para alinear el contenido en el centro y espaciado vertical -->
             <div class="col-lg-6 m-auto"> <!-- Columna centrada para el título y descripción -->
-                <h1 class="h1">Marcas</h1> <!-- Título de la sección -->
+                <h1 class="h1 nav-link font-bold" style="font-family: 'algerian'; font-size: 70px; color: black;">Marcas</h1> <!-- Título de la sección -->
                 <p>
                     Marcas reconocidas del mercado <!-- Descripción de la sección -->
                 </p>
@@ -293,7 +290,6 @@
     </div>
 </section>
 <!--End Brands-->
-    
 <!-- Start Footer -->
 <footer class="bg-dark text-light py-5" id="footer"> <!-- Sección de pie de página con fondo oscuro y texto claro -->
     <div class="container"> <!-- Contenedor principal del pie de página -->

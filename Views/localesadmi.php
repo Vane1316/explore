@@ -160,7 +160,7 @@ footer .text-light a {
   <!-- Header -->
   <nav class="navbar navbar-expand-lg navbar-light shadow"> <!-- Barra de navegación -->
         <div class="container d-flex justify-content-between align-items-center"> <!-- Contenedor flex para alinear elementos -->
-            <a class="navbar-brand text-success logo h1 align-self-center d-flex align-items-center" href="index.php"> <!-- Logo de la marca -->
+            <a class="navbar-brand text-success logo h1 align-self-center d-flex align-items-center" href="admin.php"> <!-- Logo de la marca -->
                 <img src="../public/img/LogoLocalExplore.png" alt="Logo" class="logo-img"> <!-- Imagen del logo -->
                 <span class="ml-2">ExploreLocal</span> <!-- Nombre de la marca -->
             </a>
@@ -211,7 +211,7 @@ footer .text-light a {
 <!-- Cerrar Header -->
 <div class="container py-5 animate__animated animate__fadeIn">
     <?php if ($localDetails): ?>
-        <h2 class="text-center text-primary display-4 mb-4 animate__animated animate__slideInDown"><?php echo htmlspecialchars($localDetails['nombre_empresa']); ?></h2>
+        <h2 class="h1 nav-link font-bold text-center" style="font-family: 'Wide Latin'; font-size: 100px; color: black; margin: 0 auto;"><?php echo htmlspecialchars($localDetails['nombre_empresa']); ?></h2>
         <div class="main-content">
             <div class="image-container animate__animated animate__zoomIn">
                 <?php if ($imagenes): ?>
@@ -396,12 +396,13 @@ footer .text-light a {
     }
 </script>
 
+
 <!--Brands-->
 <section class="bg-light py-5"> <!-- Sección que muestra las marcas con fondo claro y espaciado vertical -->
     <div class="container my-4"> <!-- Contenedor principal con márgenes verticales -->
         <div class="row text-center py-3"> <!-- Fila para alinear el contenido en el centro y espaciado vertical -->
             <div class="col-lg-6 m-auto"> <!-- Columna centrada para el título y descripción -->
-                <h1 class="h1">Marcas</h1> <!-- Título de la sección -->
+                <h1 class="h1 nav-link font-bold" style="font-family: 'algerian'; font-size: 70px; color: black;">Marcas</h1> <!-- Título de la sección -->
                 <p>
                     Marcas reconocidas del mercado <!-- Descripción de la sección -->
                 </p>

@@ -208,7 +208,7 @@
 
                 <button type="submit" class="btn-submit">Inicio de sesión</button>
 
-                <div class="footer-text">
+                <div class="footer-text font-bold">
                     <p>¿Aún no estás en ExploreLocal? <a href="../Views/registro.php">Regístrate</a></p>
                      <!--todavia no  esta disponible -->
                   <p>¿Olvidaste tu contraseña? <a href="../Views/recuperar_contrasena.php">Recuperar contraseña</a></p>

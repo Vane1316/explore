@@ -37,7 +37,7 @@ $locales = $controller->getLocalesWithDetails();
    <!-- Header -->
    <nav class="navbar navbar-expand-lg navbar-light shadow"> <!-- Barra de navegación -->
         <div class="container d-flex justify-content-between align-items-center"> <!-- Contenedor flex para alinear elementos -->
-            <a class="navbar-brand text-success logo h1 align-self-center d-flex align-items-center" href="index.php"> <!-- Logo de la marca -->
+            <a class="navbar-brand text-success logo h1 align-self-center d-flex align-items-center" href="admin.php"> <!-- Logo de la marca -->
                 <img src="../public/img/LogoLocalExplore.png" alt="Logo" class="logo-img"> <!-- Imagen del logo -->
                 <span class="ml-2">ExploreLocal</span> <!-- Nombre de la marca -->
             </a>
@@ -91,9 +91,13 @@ $locales = $controller->getLocalesWithDetails();
             <a class="inline-block no-underline font-medium text-black text-lg hover:text-[#6F00FF] px-4" href="../public/logout_action.php">Cerrar sesión</a>
     </nav>
     <!-- Cerrar Header -->
+       
+
 <!-- Contenido -->
 <div class="container py-5">
-    <h1 class="h2 pb-4 text-center text-primary animated-title">Descubre Nuestros Locales</h1>
+<h1 class="custom-title h1 nav-link text-center" style="font-family: 'Algerian'; font-size: 200px; color: black; margin: 0 auto;">Descubre Nuestros Locales</h1>
+
+    <br>
     <div class="row">
         <?php foreach ($locales as $local): ?>
         <div class="col-lg-4 col-md-6 mb-4">
@@ -114,12 +118,12 @@ $locales = $controller->getLocalesWithDetails();
                     <p class="card-text"><small class="text-muted">Abierto ahora: 9:00 AM - 9:00 PM</small></p>
                 </div>
                 <div class="card-footer bg-transparent border-0 text-center">
-    <form action="../views/localesadmi.php" method="post">
-        <input type="hidden" name="id_local" value="<?php echo $local['id_local']; ?>">
-        <button type="submit" class="btn btn-primary btn-sm rounded-pill">
-            <i class="fas fa-info-circle mr-2"></i>Ver Detalles
-        </button>
-    </form>
+        <form action="../Views/localesadmi.php" method="post">
+            <input type="hidden" name="id_local" value="<?php echo $local['id_local']; ?>">
+            <button type="submit" class="btn btn-primary btn-sm rounded-pill">
+                <i class="fas fa-info-circle mr-2"></i>Ver Detalles
+            </button>
+        </form>
 </div> 
             </div>
         </div>
@@ -139,6 +143,10 @@ $locales = $controller->getLocalesWithDetails();
             transform: translateY(0);
         }
     }
+    .custom-title {
+    font-size: 70px !important; /* Agregar !important si es necesario */
+}
+
 
     .animated-title {
         animation: fadeInUp 1s ease-out;
@@ -207,13 +215,12 @@ $locales = $controller->getLocalesWithDetails();
 
 </style>
 
-
 <!--Brands-->
 <section class="bg-light py-5"> <!-- Sección que muestra las marcas con fondo claro y espaciado vertical -->
     <div class="container my-4"> <!-- Contenedor principal con márgenes verticales -->
         <div class="row text-center py-3"> <!-- Fila para alinear el contenido en el centro y espaciado vertical -->
             <div class="col-lg-6 m-auto"> <!-- Columna centrada para el título y descripción -->
-                <h1 class="h1">Marcas</h1> <!-- Título de la sección -->
+                <h1 class="h1 nav-link font-bold" style="font-family: 'algerian'; font-size: 70px; color: black;">Marcas</h1> <!-- Título de la sección -->
                 <p>
                     Marcas reconocidas del mercado <!-- Descripción de la sección -->
                 </p>
@@ -357,14 +364,9 @@ $locales = $controller->getLocalesWithDetails();
     </div>
 </footer>
 <!-- End Footer -->
-<!-- Iniciar Script -->
-<script src="../public/js/jquery-1.11.0.min.js"></script> <!-- Incluir jQuery -->
-<script src="../public/js/jquery-migrate-1.2.1.min.js"></script> <!-- Incluir jQuery Migrate -->
-<script src="../public/js/bootstrap.bundle.min.js"></script> <!-- Incluir Bootstrap -->
-<script src="../public/js/templatemo.js"></script> <!-- Incluir el script principal de Templatemo -->
-<script src="../public/js/custom.js"></script> <!-- Incluir script personalizado -->
-<!-- End Script -->
-    <!-- Agrega los scripts de Bootstrap -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts -->
+    <script src="../public/js/jquery.min.js"></script> <!-- Script de jQuery -->
+    <script src="../public/js/bootstrap.bundle.min.js"></script> <!-- Script de Bootstrap -->
+
 </body>
 </html>

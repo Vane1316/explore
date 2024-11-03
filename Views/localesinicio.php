@@ -35,6 +35,7 @@ $locales = $controller->getLocalesWithDetails();
       session_start();
     ?>
   
+   
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-light shadow"> <!-- Barra de navegación -->
         <div class="container d-flex justify-content-between align-items-center"> <!-- Contenedor flex para alinear elementos -->
@@ -51,11 +52,11 @@ $locales = $controller->getLocalesWithDetails();
             <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between" id="templatemo_main_nav"> <!-- Navegación colapsable -->
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"> <!-- Lista de navegación -->
-                    <li class="nav-item">
-                            <a class="nav-link " href="../Public/inicio.php">INICIO</a> <!-- Enlace a la página de inicio -->
+                        <li class="nav-item">
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Public/inicio.php">INICIO</a> <!-- Enlace a la página de inicio -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="../Views/localesinicio.php">LOCALES</a> <!-- Enlace a la página de locales -->
+                            <a class="nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/localesinicio.php">LOCALES</a> <!-- Enlace a la página de locales -->
                         </li>
                      <!--   <li class="nav-item">
                             <a class="nav-link" href="../Views/contact.php">Contactos</a> (Enlace a la página de contactos)
@@ -63,24 +64,25 @@ $locales = $controller->getLocalesWithDetails();
                     -->
                         <!-- Links para login y registro -->
                         <li class="nav-item">
-                            <a class="nav-link " href="../Views/inicio_sesion.php">LOGIN</a> <!-- Enlace a la página de login -->
+                            <a class="nav-link btn btn-primary text-white nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/inicio_sesion.php">LOGIN</a> <!-- Enlace a la página de login -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="../Views/registro.php">REGISTER</a> <!-- Enlace a la página de registro -->
+                            <a class="nav-link btn btn-primary text-white nav-link font-bold" style="font-family: 'Arial Black'; font-size: 29px;" href="../Views/registro.php">REGISTER</a> <!-- Enlace a la página de registro -->
                         </li>
+
                     </ul>
                 </div>
-            </div>
-
+            </di>
         </div>
     </nav>
     <!-- Cerrar Header -->
-
    
 
 <!-- Contenido -->
 <div class="container py-5">
-    <h1 class="h2 pb-4 text-center text-primary animated-title">Descubre Nuestros Locales</h1>
+<h1 class="custom-title h1 nav-link text-center" style="font-family: 'Algerian'; font-size: 200px; color: black; margin: 0 auto;">Descubre Nuestros Locales</h1>
+
+    <br>
     <div class="row">
         <?php foreach ($locales as $local): ?>
         <div class="col-lg-4 col-md-6 mb-4">
@@ -133,6 +135,10 @@ $locales = $controller->getLocalesWithDetails();
         color: #4a4a4a;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
+    .custom-title {
+    font-size: 70px !important; /* Agregar !important si es necesario */
+}
+
 
     .hover-card {
         transition: all 0.3s ease-in-out;
@@ -199,7 +205,7 @@ $locales = $controller->getLocalesWithDetails();
     <div class="container my-4"> <!-- Contenedor principal con márgenes verticales -->
         <div class="row text-center py-3"> <!-- Fila para alinear el contenido en el centro y espaciado vertical -->
             <div class="col-lg-6 m-auto"> <!-- Columna centrada para el título y descripción -->
-                <h1 class="h1">Marcas</h1> <!-- Título de la sección -->
+                <h1 class="h1 nav-link font-bold" style="font-family: 'algerian'; font-size: 70px; color: black;">Marcas</h1> <!-- Título de la sección -->
                 <p>
                     Marcas reconocidas del mercado <!-- Descripción de la sección -->
                 </p>
